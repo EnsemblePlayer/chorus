@@ -1,0 +1,122 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #333;
+	color: white;
+}
+
+.title {
+	font-family: 'Lobster', cursive; 
+	color: #f2f2f2; 
+	font-size: 90px;
+	text-align: center;
+}
+
+.footer {
+	color: white; 
+	font-size: 12px;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.album-banner {
+	background-size: cover; 
+	background-image: url('../img/albums.jpg');
+	height: 200px; 
+	padding: 25px; 
+	box-shadow: 0px 400px rgba(73, 73, 73, 0.6) inset;
+}
+
+.buttons {
+	padding-top: 20px;
+}
+
+.button {
+	position: relative;
+	vertical-align: top;
+	width: auto;
+	height: 60px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+}
+
+.secondary {
+	background: #e91e63;
+	border-bottom: 2px solid #bd1850;
+	-webkit-box-shadow: inset 0 -2px #bd1850;
+	box-shadow: inset 0 -2px #bd1850;
+}
+
+.primary {
+	background: #3498db;
+	border-bottom: 2px solid #2a8bcc;
+	-webkit-box-shadow: inset 0 -2px #2a8bcc;
+	box-shadow: inset 0 -2px #2a8bcc;
+}
+
+.button:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.button:active {
+	top: 1px;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.form-signin {
+	max-width: 330px;
+  	padding: 15px;
+  	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+ 	 margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+	  font-weight: normal;
+}
+
+.form-signin .form-control {
+  	position: relative;
+  	height: auto;
+  	-webkit-box-sizing: border-box;
+    	 -moz-box-sizing: border-box;
+        	  box-sizing: border-box;
+  	padding: 10px;
+  	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[id="mid"] {
+  	margin-bottom: -1px;
+  	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+  	border-top-left-radius: 0;
+  	border-top-right-radius: 0;
+}
+
+.form-signin input[id="top"] {
+  	margin-bottom: -1px;
+  	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+}
+
+.form-signin input[id="bottom"] {
+  	margin-bottom: 10px;
+  	border-top-left-radius: 0;
+  	border-top-right-radius: 0;
+}

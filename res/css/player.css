@@ -1,0 +1,12 @@
+.table tbody>tr>th {
+    vertical-align: middle;
+}
+
+.table tbody>tr>td {
+    vertical-align: middle;
+}
+
+.sign-out {
+	color: #e91e63;
+	padding-top: 5px;
+}
