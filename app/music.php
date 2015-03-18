@@ -102,7 +102,7 @@
 							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 300; padding-left: 10px; padding-right: 10px;" href="index.php">Home</a>
 							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 400; padding-left: 10px; padding-right: 10px; border-bottom-style: solid; border-bottom-color: #e91e63;" href="music.php">Music</a>
 							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 300; padding-left: 10px; padding-right: 10px;" href="settings.php">Settings</a>
-							<i class="sign-out fa fa-sign-out fa-3x pull-right"></i>
+							<a href="logout.php"><i class="sign-out fa fa-sign-out fa-3x pull-right"></i></a>
 						</div>
 					</div>
 					
