@@ -31,15 +31,15 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 				$_SESSION['spotify'] = "";
 			}
 
-			header("Location: /app/index.php");
+			header("Location: ../app/index.php");
 		} else {
-			header("Location: /app/login.php?error=1");
+			header("Location: ../app/login.php?error=1");
 		}
 	} else {
-		header("Location: /app/login.php?error=1");
+		header("Location: ../app/login.php?error=1");
 	}
 } else {
-	header("Location: /app/login.php?error=3");
+	header("Location: ../app/login.php?error=3");
 }
 
 $m->close();
