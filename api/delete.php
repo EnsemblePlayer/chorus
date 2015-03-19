@@ -20,7 +20,7 @@ if ($player > 0) {
 		echo"Deleted song from queue.";
 	}
 } else {
-	header("Location: /app/player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 

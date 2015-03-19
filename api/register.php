@@ -29,18 +29,18 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 						$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`) VALUES ('$id',1,'$gpun','$gppw')") or die($m->error);
 					}
 				}
-				header("Location: /app/login.php?success=1");
+				header("Location: ..../app/login.php?success=1");
 			} else {
-				header("Location: /app/register.php?error=4");
+				header("Location: ..../app/register.php?error=4");
 			}
 		} else {
-			header("Location: /app/register.php?error=1");
+			header("Location: ../app/register.php?error=1");
 		}
 	} else {
-		header("Location: /app/register.php?error=2");
+		header("Location: ../app/register.php?error=2");
 	}
 } else {
-	header("Location: /app/register.php?error=3");
+	header("Location: ../app/register.php?error=3");
 }
 
 $m->close();

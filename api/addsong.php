@@ -26,7 +26,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 			$m->query("INSERT INTO `songs` (`ApiId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$stitle','YouTube','','','$ytart',0)") or die($m->error);
 			//cont
 		} else {
-			header("Location: /app/music.php?error=1");
+			header("Location: ../app/music.php?error=1");
 			exit;
 		}
 	} elseif ($service == 1) {
@@ -46,10 +46,10 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 			$m->query("INSERT INTO `songs` (`ApiId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$sname','$sartist','$salbum','$salbumart','$sartistart',1)") or die($m->error);
 			//cont
 		} else {
-			header("Location: /app/music.php?error=1");
+			header("Location: ../app/music.php?error=1");
 		}
 	} else {
-		header("Location: /app/music.php?error=3");
+		header("Location: ../app/music.php?error=3");
 	}
 
 	//cont
@@ -65,10 +65,10 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 		$fmax = $smax->fetch_array(MYSQLI_ASSOC);
 		$pos = $fmax['MaxPosition']+1000;
 		$m->query("INSERT INTO `queues` (`PlayerId`,`SongId`,`UserId`,`Position`) VALUES ('$p','$i','$u', '$pos')") or die($m->error);
-		header("Location: /app/index.php");
+		header("Location: ../app/index.php");
 	}
 } else {
-	header("Location: /app/music.php?error=2");
+	header("Location: ../app/music.php?error=2");
 }
 
 $m->close();

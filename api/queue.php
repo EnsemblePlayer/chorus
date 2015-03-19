@@ -29,7 +29,7 @@ if ($player > 0) {
 		echo"[]";
 	}
 } else {
-	header("Location: /player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 
