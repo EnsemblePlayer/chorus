@@ -65,7 +65,8 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 			exec("python includes/url.py 1 '$apiid' '$un' '$pw' '$di'",$out);
 			if (count($out) > 0) {
 				$url = $out[0];
-				$m->query("UPDATE `songs` SET `Url`='$url' WHERE `songId`='$song'") or die($m->error);
+				$url2 = addslashes($url);
+				$m->query("UPDATE `songs` SET `Url`='$url2' WHERE `songId`='$song'") or die($m->error);
 			} else {
 				echo"ERROR: Could not generate stream URL.";
 			}
