@@ -1,0 +1,28 @@
+* {
+	font-family: 'Roboto', sans-serif;
+	color: #f2f2f2;
+}
+
+body {
+	padding: 20px;
+	background-color: #3f3f3f;
+	color: #f2f2f2;
+}
+
+.logo {
+	font-family: 'Lobster', cursive;
+	font-size: 32px;
+}
+
+.nav-item {
+	text-decoration: none; 
+	color: #f2f2f2; 
+	font-size: 32px; 
+	font-weight: 300; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+}
+
+.nav-item.active {
+	font-weight: 400; 
+}
