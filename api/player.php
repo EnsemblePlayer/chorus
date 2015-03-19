@@ -71,13 +71,11 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 			}
 		}
 
-		echo $url."\n";
-
 		//json output
 		$json = array();
 		$json['entryId'] = intval($entryid);
 		$json['service'] = intval($service);
-		$json['url'] = stripslashes($url);
+		$json['url'] = stripslashes($url); //probably unnecessary
 		$json['songName'] = $sname;
 		$json['artist'] = $sartist;
 		$json['status'] = intval($status);
