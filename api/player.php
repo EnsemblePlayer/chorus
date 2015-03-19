@@ -75,7 +75,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$json = array();
 		$json['entryId'] = intval($entryid);
 		$json['service'] = intval($service);
-		$json['url'] = stripslashes($url);
+		$json['url'] = $url;
 		$json['songName'] = $sname;
 		$json['artist'] = $sartist;
 		$json['status'] = intval($status);
