@@ -19,7 +19,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<?php include "api/includes/dev.php" ?>
+	<?php include "../api/includes/dev.php" ?>
 	<body>
 		<div style="width: 100%; height: 100%;">
 			<div class="album-banner">
