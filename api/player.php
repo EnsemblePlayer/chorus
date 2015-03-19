@@ -64,9 +64,8 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		if ($service == 1 && $url == "") {
 			exec("python includes/url.py 1 '$apiid' '$un' '$pw' '$di'",$out);
 			if (count($out) > 0) {
-				$url = $out[0];
-				$url2 = addslashes($url);
-				$m->query("UPDATE `songs` SET `Url`='$url2' WHERE `songId`='$song'") or die($m->error);
+				$url = addslashes($out[0]);
+				$m->query("UPDATE `songs` SET `Url`='$url' WHERE `songId`='$song'") or die($m->error);
 			} else {
 				echo"ERROR: Could not generate stream URL.";
 			}
@@ -76,7 +75,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$json = array();
 		$json['entryId'] = intval($entryid);
 		$json['service'] = intval($service);
-		$json['url'] = $url;
+		$json['url'] = stripslashes($url);
 		$json['songName'] = $sname;
 		$json['artist'] = $sartist;
 		$json['status'] = intval($status);
