@@ -4,8 +4,6 @@
 	require '../api/includes/logged.php';
 	$ignoress = true;
 	require '../api/includes/connect.php';
-
-	print_r($_SESSION);
 	//TOFIX: player association
 	$player = 1;
 	$s = $m->query("SELECT * FROM `players` WHERE `playerId`='$player'") or die($m->error);
