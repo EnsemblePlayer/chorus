@@ -39,6 +39,7 @@
 				</div>
 			</div>
 			
+			<?php include "api/includes/dev.php" ?>
 			<div class="container" style="text-align: center;">
 				<h1>Your Music</h1>
 				<p>Login to your music streaming services of choice and listen away.<p>
