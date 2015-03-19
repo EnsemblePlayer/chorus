@@ -1,6 +1,19 @@
 <?php
 require "includes/connect.php";
 
+function exitNull() {
+	header('Content-Type: application/json');
+	$json = array();
+	$json['entryId'] = -1;
+	$json['service'] = -1;
+	$json['username'] = "";
+	$json['password'] = "";
+	$json['apiId'] = -1;
+	$json['status'] = -1;
+	echo json_encode($json, JSON_FORCE_OBJECT);
+	exit;
+}
+
 if (isset($_GET['id']) && $_GET['id'] > 0) {
 	$player = $m->real_escape_string($_GET['id']);
 	$next = (isset($_GET['next'])) ? $m->real_escape_string($_GET['next']) : 0;
@@ -10,7 +23,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		if ($next == 1) {
 			$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC") or die($m->error);
 			if ($qs->num_rows == 0) {
-				exit("-1~~-1~~~~~~~~-1");
+				exitNull();
 			} else {
 				//TOFIX: CHANGE TO UPDATE NEGATIVE LATER ON
 				$qf = $qs->fetch_array(MYSQLI_ASSOC);
@@ -19,14 +32,14 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 				$m->query("DELETE FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
 				//only was 1 left!
 				if ($qs->num_rows == 1) {
-					exit("-1~~-1~~~~~~~~-1");
+					exitNull();
 				}
 			}
 		}
 		//get current status/song
 		$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
 		if ($qs->num_rows == 0) {
-			exit("-1~~-1~~~~~~~~-1");
+			exitNull();
 		}
 		$qf = $qs->fetch_array(MYSQLI_ASSOC); //pull data from queue table
 		$song = $qf['SongId'];
@@ -42,7 +55,18 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$cf = $cs->fetch_array(MYSQLI_ASSOC);
 		$un = $cf['Username'];
 		$pw = $cf['Password'];
-		echo"$entryid~~$service~~$un~~$pw~~$apiid~~$status";
+
+		//json output
+		$json = array();
+		$json['entryId'] = intval($entryid);
+		$json['service'] = intval($service);
+		$json['username'] = $un;
+		$json['password'] = $pw;
+		$json['apiId'] = intval($apiid);
+		$json['status'] = intval($status);
+		header('Content-Type: application/json');
+		echo json_encode($json, JSON_FORCE_OBJECT);
+		//echo"$entryid~~$service~~$un~~$pw~~$apiid~~$status";
 	} else {
 		echo"ERROR: Invalid player.";
 	}
