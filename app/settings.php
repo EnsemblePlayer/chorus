@@ -105,7 +105,7 @@
 					
 					<div style="padding: 20px;">
 						<?php if(isset($_GET['success']) && $_GET['success'] == "1") { ?>
-							<div class="alert alert-danger">
+							<div class="alert alert-success">
 								<b>Changes saved</b>
 							</div>
 						<?php } ?>
