@@ -15,10 +15,10 @@ if ($player > 0) {
 			echo"Toggled pause.";
 		}
 	} else {
-		header("Location: /app/player.php?error=1");
+		header("Location: ../app/player.php?error=1");
 	}
 } else {
-	header("Location: /app/player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 

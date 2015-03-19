@@ -18,7 +18,7 @@ if ($player > 0) {
 		echo"Cleared queue & related songs.";
 	}
 } else {
-	header("Location: /player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 $m->close();

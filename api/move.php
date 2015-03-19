@@ -57,7 +57,7 @@ if ($player > 0) {
 		}
 	}
 } else {
-	header("Location: /app/player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 

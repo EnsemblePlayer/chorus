@@ -27,12 +27,12 @@ if ((isset($_POST['gpusername']) && isset($_POST['gppassword'])) || (isset($_POS
 			}
 			$_SESSION['googleplay'] = $gpun;
 		}
-		header("Location: /app/settings.php?success=1");
+		header("Location: ../app/settings.php?success=1");
 	} else {
-		header("Location: /app/settings.php?error=2");
+		header("Location: ../app/settings.php?error=2");
 	}
 } else {
-	header("Location: /app/settings.php?error=1");
+	header("Location: ../app/settings.php?error=1");
 }
 
 $m->close();

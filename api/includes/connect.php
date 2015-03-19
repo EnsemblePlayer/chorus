@@ -3,7 +3,7 @@ if (!isset($ignoress)) {
 	session_start();
 }
 
-$m = new mysqli("localhost", "DB_USER", "DB_PASSWORD", "ensemble");
+$m = new mysqli("localhost", "DB_USER", "DB_PASSWORD", "DB_NAME");
 
 if ($m->connect_errno) {
 	echo "Database connection failed: " . $m->connect_error . "<br>Blame the administrator of this website, Thomas Gaubert.";

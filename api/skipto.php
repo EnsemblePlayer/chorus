@@ -22,10 +22,10 @@ if ($player > 0) {
 	if (isset($_SERVER['HTTP_REFERER'])) {
 		header("Location: ".$_SERVER['HTTP_REFERER']);
 	} else {
-		header("Location: /app/index.php");
+		header("Location: ../app/index.php");
 	}
 } else {
-	header("Location: /app/player.php?error=1");
+	header("Location: ../app/player.php?error=1");
 }
 
 
