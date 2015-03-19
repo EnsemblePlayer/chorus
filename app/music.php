@@ -84,8 +84,8 @@
 			}
 		}
 	?>
-	<?php include "../api/includes/dev.php" ?>
 	<body style="font-family: 'Roboto', sans-serif; margin-top:-20px;">
+		<?php include "../api/includes/dev.php" ?>
 		<div id="footer">
 			<img src=<?php echo '"' . $album_art . '"'; ?> width="100" height="100" style="float:left;"/>
 			<a href="" class="play-btn <?=$startpause?> pull-right"></a> 
