@@ -47,11 +47,6 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$entryid = $qf['entryId'];
 		$f = $s->fetch_array(MYSQLI_ASSOC);
 		$status = $f['Status'];
-		$cs = $m->query("SELECT * FROM `credentials` WHERE `UserId`='$u' AND `Service`='$service'") or die($m->error); //pull login information based on userid from queue
-		$cf = $cs->fetch_array(MYSQLI_ASSOC);
-		$un = $cf['Username'];
-		$pw = $cf['Password'];
-		$di = $cf['DeviceId'];
 		$ss = $m->query("SELECT * FROM `songs` WHERE `songID`='$song'") or die($m->error); //pull data from song table
 		$sf = $ss->fetch_array(MYSQLI_ASSOC);
 		$service = $sf['Service'];
@@ -59,6 +54,11 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$apiid = $sf['ApiSongId'];
 		$sname = $sf['Title'];
 		$sartist = $sf['Artist'];
+		$cs = $m->query("SELECT * FROM `credentials` WHERE `UserId`='$u' AND `Service`='$service'") or die($m->error); //pull login information based on userid from queue
+		$cf = $cs->fetch_array(MYSQLI_ASSOC);
+		$un = $cf['Username'];
+		$pw = $cf['Password'];
+		$di = $cf['DeviceId'];
 
 		//url check for APIs
 		if ($service == 1 && $url == "") {
