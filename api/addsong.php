@@ -55,7 +55,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 	//cont
 	if ($sid != "") {
 		//get id of song just inserted
-		$s = $m->query("SELECT * FROM `songs` WHERE `Url`='$sid' ORDER BY `songId` DESC LIMIT 1") or die($m->error); 
+		$s = $m->query("SELECT * FROM `songs` WHERE `Url`='$sid' OR `ApiSongId`='$sid' ORDER BY `songId` DESC LIMIT 1") or die($m->error); 
 		$f = $s->fetch_array(MYSQLI_ASSOC);
 		$i = $f['songId'];
 		//TOFIX: CHECK WHICH PLAYER IS ASSOCIATED

@@ -53,7 +53,6 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$pw = $cf['Password'];
 		$di = $cf['DeviceId'];
 		$ss = $m->query("SELECT * FROM `songs` WHERE `songID`='$song'") or die($m->error); //pull data from song table
-		echo $qs->num_rows . " ~ " . $song;
 		$sf = $ss->fetch_array(MYSQLI_ASSOC);
 		$service = $sf['Service'];
 		$url = $sf['Url'];
