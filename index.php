@@ -19,6 +19,8 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
+	
+	<?php include "api/includes/dev.php" ?>
 	<body style="font-family: 'Roboto', sans-serif; background: #333; color: white;">
 		<div id="fullpage">
 			<div class="section">
@@ -39,7 +41,6 @@
 				</div>
 			</div>
 			
-			<?php include "api/includes/dev.php" ?>
 			<div class="container" style="text-align: center;">
 				<h1>Your Music</h1>
 				<p>Login to your music streaming services of choice and listen away.<p>
