@@ -23,7 +23,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 			$doc = new DOMDocument;
 			$doc->load($url);
 			$stitle = addslashes($doc->getElementsByTagName("title")->item(0)->nodeValue);
-			$m->query("INSERT INTO `songs` (`ApiId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$stitle','YouTube','','','$ytart',0)") or die($m->error);
+			$m->query("INSERT INTO `songs` (`Url`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$stitle','YouTube','','','$ytart',0)") or die($m->error);
 			//cont
 		} else {
 			header("Location: ../app/music.php?error=1");
@@ -43,7 +43,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 			$salbum = addslashes($out[3]);
 			$salbumart = addslashes($out[4]);
 			$sartistart = addslashes($out[5]);
-			$m->query("INSERT INTO `songs` (`ApiId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$sname','$sartist','$salbum','$salbumart','$sartistart',1)") or die($m->error);
+			$m->query("INSERT INTO `songs` (`ApiSongId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$sid','$sname','$sartist','$salbum','$salbumart','$sartistart',1)") or die($m->error);
 			//cont
 		} else {
 			header("Location: ../app/music.php?error=1");
@@ -55,7 +55,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 	//cont
 	if ($sid != "") {
 		//get id of song just inserted
-		$s = $m->query("SELECT * FROM `songs` WHERE `ApiId`='$sid' ORDER BY `songId` DESC LIMIT 1") or die($m->error); 
+		$s = $m->query("SELECT * FROM `songs` WHERE `Url`='$sid' ORDER BY `songId` DESC LIMIT 1") or die($m->error); 
 		$f = $s->fetch_array(MYSQLI_ASSOC);
 		$i = $f['songId'];
 		//TOFIX: CHECK WHICH PLAYER IS ASSOCIATED

@@ -6,10 +6,10 @@ function exitNull() {
 	$json = array();
 	$json['entryId'] = -1;
 	$json['service'] = -1;
-	$json['username'] = "";
-	$json['password'] = "";
-	$json['apiId'] = -1;
+	$json['url'] = -1;
 	$json['status'] = -1;
+	$json['songName'] = -1;
+	$json['artist'] = -1;
 	echo json_encode($json, JSON_FORCE_OBJECT);
 	exit;
 }
@@ -45,28 +45,42 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 		$song = $qf['SongId'];
 		$u = $qf['UserId'];
 		$entryid = $qf['entryId'];
-		$ss = $m->query("SELECT * FROM `songs` WHERE `songID`='$song'") or die($m->error); //pull data from song table
-		$sf = $ss->fetch_array(MYSQLI_ASSOC);
-		$service = $sf['Service'];
-		$apiid = $sf['ApiId'];
 		$f = $s->fetch_array(MYSQLI_ASSOC);
 		$status = $f['Status'];
 		$cs = $m->query("SELECT * FROM `credentials` WHERE `UserId`='$u' AND `Service`='$service'") or die($m->error); //pull login information based on userid from queue
 		$cf = $cs->fetch_array(MYSQLI_ASSOC);
 		$un = $cf['Username'];
 		$pw = $cf['Password'];
+		$di = $cf['DeviceId'];
+		$ss = $m->query("SELECT * FROM `songs` WHERE `songID`='$song'") or die($m->error); //pull data from song table
+		$sf = $ss->fetch_array(MYSQLI_ASSOC);
+		$service = $sf['Service'];
+		$url = $sf['Url'];
+		$apiid = $sf['ApiSongId'];
+		$sname = $sf['Title'];
+		$sartist = $sf['Artist'];
+
+		//url check for APIs
+		if ($service == 1 && $url == "") {
+			exec("python includes/url.py 1 '$apiid' '$un' '$pw' '$di'",$out);
+			if (count($out) > 0) {
+				$url = $out[0];
+				$m->query("UPDATE `songs` SET `Url`='$url' WHERE `songId`='$song'") or die($m->error);
+			} else {
+				echo"ERROR: Could not generate stream URL.";
+			}
+		}
 
 		//json output
 		$json = array();
 		$json['entryId'] = intval($entryid);
 		$json['service'] = intval($service);
-		$json['username'] = $un;
-		$json['password'] = $pw;
-		$json['apiId'] = intval($apiid);
+		$json['url'] = $url;
+		$json['songName'] = $sname;
+		$json['artist'] = $sartist;
 		$json['status'] = intval($status);
 		header('Content-Type: application/json');
 		echo json_encode($json, JSON_FORCE_OBJECT);
-		//echo"$entryid~~$service~~$un~~$pw~~$apiid~~$status";
 	} else {
 		echo"ERROR: Invalid player.";
 	}

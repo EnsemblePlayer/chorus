@@ -6,7 +6,7 @@ if __name__ == "__main__":
 		mc = Mobileclient()
 		success = mc.login(sys.argv[3], sys.argv[4])
 		if success == True:
-			sresults = mc.search_all_access(sys.argv[2], 1)
+			sresults = mc.search_all_access(sys.argv[2], 1) #2 = query
 			song = sresults['song_hits'][0]
 			sid = song['track']['nid']
 			sname = song['track']['title']

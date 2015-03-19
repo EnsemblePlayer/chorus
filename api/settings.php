@@ -19,11 +19,19 @@ if ((isset($_POST['gpusername']) && isset($_POST['gppassword'])) || (isset($_POS
 			$_SESSION['spotify'] = $sun;
 		}
 		if (strlen($gpun) > 0 && strlen($gppw) > 0) {
+			//get device id
+			exec("python includes/device.py 1 '$gpun' '$gppw'",$out);
+			if (count($out) > 0) {
+				$di = $out[0];
+			} else {
+				header("Location: ../app/settings.php?error=3");
+			}
+
 			$s = $m->query("SELECT * FROM `credentials` WHERE `UserId`='$u' AND `Service`=1") or die($m->error);
 			if ($s->num_rows > 0) {
-				$m->query("UPDATE `credentials` SET `Username`='$gpun', `Password`='$gppw' WHERE `UserId`='$u' AND `Service`=1") or die($m->error);
+				$m->query("UPDATE `credentials` SET `Username`='$gpun', `Password`='$gppw', `DeviceId`='$di' WHERE `UserId`='$u' AND `Service`=1") or die($m->error);
 			} else {
-				$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`) VALUES ('$u',1,'$gpun','$gppw')") or die($m->error);
+				$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`,`DeviceId`) VALUES ('$u',1,'$gpun','$gppw','$di')") or die($m->error);
 			}
 			$_SESSION['googleplay'] = $gpun;
 		}

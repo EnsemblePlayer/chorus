@@ -26,12 +26,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 						$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`) VALUES ('$id',2,'$sun','$spw')") or die($m->error);
 					}
 					if (strlen($gppun) > 0 && strlen($gppw) > 0) {
-						$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`) VALUES ('$id',1,'$gpun','$gppw')") or die($m->error);
+						//get device id
+						exec("python includes/device.py 1 '$gpun' '$gppw'",$out);
+						if (count($out) > 0) {
+							$di = $out[0];
+						} else {
+							header("Location: ../app/login.php?success=2");
+						}
+						$m->query("INSERT INTO `credentials` (`UserId`,`Service`,`Username`,`Password`,`DeviceId`) VALUES ('$id',1,'$gpun','$gppw','$di')") or die($m->error);
 					}
 				}
-				header("Location: ..../app/login.php?success=1");
+				header("Location: ../app/login.php?success=1");
 			} else {
-				header("Location: ..../app/register.php?error=4");
+				header("Location: ../app/register.php?error=4");
 			}
 		} else {
 			header("Location: ../app/register.php?error=1");
