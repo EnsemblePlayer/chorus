@@ -5,7 +5,6 @@ if __name__ == "__main__":
 	if sys.argv[1] == "1":
 		mc = Mobileclient()
 		success = mc.login(sys.argv[3], sys.argv[4])
-		#success = mc.login('tpgaubert@gmail.com', 'pcbwoxdlptkennby')
 		if success == True:
 			sresults = mc.search_all_access(sys.argv[2], 1)
 			song = sresults['song_hits'][0]
@@ -24,4 +23,4 @@ if __name__ == "__main__":
 			print(salbumart)
 			print(artistart)
 	if sys.argv[1] == "2":
-		print("Spotify!")
+		print("Spotify is not yet supported.")

@@ -35,7 +35,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 		$un = $f['Username'];
 		$pw = $f['Password'];
 		$song = str_replace("'","",$song);
-		exec("python includes/api.py 1 '$song' '$un' '$pw'",$out);
+		exec("python includes/metadata.py 1 '$song' '$un' '$pw'",$out);
 		if (count($out) > 0) {
 			$sid = $out[0];
 			$sname = addslashes($out[1]);
