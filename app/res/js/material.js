@@ -19,11 +19,10 @@ $(document).ready(function() {
         } else if (!$(this).hasClass('to-play')) {
             $('.play-btn').addClass('pause');
         }
-        
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "/api/pause.php", true);
-                xmlhttp.send();
 
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET","/api/pause.php",true);
+        xmlhttp.send();
     });
 
     /**

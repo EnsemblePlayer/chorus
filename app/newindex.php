@@ -1,44 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ensemble</title>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="res/css/newplayer.css">
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="top-bar">
-			<div class="row">
-			    <div class="col-xs-6">
-			    	<div class="row">
-			    		<div class="col-xs-3">
-			    			<a class="nav-item active">Home</a>
-			    		</div>
-			    		<div class="col-xs-3">
-			    			<a class="nav-item">Music</a>
-			    		</div>
-			    		<div class="col-xs-3">
-			    			<a class="nav-item">Settings</a>
-			    		</div>
-			    	</div>
-			    </div>
-			    <div class="col-xs-6">
-			    	<div class="logo pull-right">Ensemble</div>
-			    </div>
-			</div>
-		</div>
-	</body>
+	<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="res/css/newplayertest.css">
+	<link rel="stylesheet" href="res/css/newplayermodal.css">
+	<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Ensemble</title>
+</head>
+<body>
+	<main>
+		<a href="#cd-nav-alt" class="cd-nav-trigger-alt">Menu 
+		<span class="cd-nav-icon"></span>
+
+		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+			<circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+		</svg>
+	</a>
+	
+		<h1>Full-Screen Pushing Navigation</h1>
+
+		<p>A full page menu, that replaces the current content by pushing it off the screen.</p>
+
+	</main>
+
+	<a href="#cd-nav" class="cd-nav-trigger">Menu 
+		<span class="cd-nav-icon"></span>
+
+		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+			<circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+		</svg>
+	</a>
+	
+	<div id="cd-nav" class="cd-nav">
+		<div class="cd-navigation-wrapper">
+			<div class="cd-half-block">
+				<nav>
+					<ul class="cd-primary-nav">
+						<li><a href="#0" class="selected">Home</a></li>
+						<li><a href="#0">Music</a></li>
+						<li><a href="#0">Settings</a></li>
+						<li><a href="#0">Logout</a></li>
+					</ul>
+				</nav>
+			</div><!-- .cd-half-block -->
+			
+			<div class="cd-half-block">
+				<span class="logo">Ensemble</span>
+			</div> <!-- .cd-half-block -->
+		</div> <!-- .cd-navigation-wrapper -->
+	</div> <!-- .cd-nav -->
+	<script src="res/js/jquery-2.1.1.js"></script>
+	<script src="res/js/velocity.min.js"></script>
+	<script src="res/js/player.js"></script> <!-- Resource jQuery -->
+</body>
 </html>
