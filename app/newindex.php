@@ -24,7 +24,7 @@
 
 	</main>
 
-	<div class="music-bar colorize-lightest">
+	<div class="music-bar colorize-dominant">
 		<img class="album-art" src="res/img/album.png"/>
 		<div class="song-metadata">
 			<p class="song-title">Happy (From "Despicable Me 2")</p>
