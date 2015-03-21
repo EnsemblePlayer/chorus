@@ -29,6 +29,11 @@ $(window).load(function() {
     	if(classes.indexOf("colorize-bg") >= 0) {
 	  		dominantElements[i].style.backgroundColor = 'rgb(' + color.join(',') + ')';
     	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		dominantElements[i].style.color = 'rgb(' + color.join(',') + ')';
+    	}
+
 	  	if(classes.indexOf("colorize-img") >= 0) {
 	  		dominantElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + color.join(',') 
 	  													+ ', 0.7) 0%, rgba(' + color.join(',') + ', 0.7) 100%), ' 
@@ -44,7 +49,20 @@ $(window).load(function() {
 		inverseDominantColor[2] = 255 - color[2];
 	}
     for(var i = 0; i < inverseDominantElements.length; i++) {
-	  	inverseDominantElements[i].style.backgroundColor = 'rgb(' + inverseDominantColor.join(',') + ')';
+	  	var classes = inverseDominantElements[i].className;
+	  	if(classes.indexOf("colorize-bg") >= 0) {
+	  		inverseDominantElements[i].style.backgroundColor = 'rgb(' + inverseDominantColor.join(',') + ')';
+    	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		inverseDominantElements[i].style.color = 'rgb(' + inverseDominantColor.join(',') + ')';
+    	}
+
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		inverseDominantElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + inverseDominantColor.join(',') 
+	  													+ ', 0.7) 0%, rgba(' + inverseDominantColor.join(',') + ', 0.7) 100%), ' 
+	  													+ inverseDominantElements[i].style.backgroundImage;
+	  	}
 	}
 
 	/*
@@ -60,11 +78,37 @@ $(window).load(function() {
 	}
 
 	for(var i = 0; i < lightestElements.length; i++) {
-	    lightestElements[i].style.backgroundColor = 'rgb(' + colors[0].join(',') + ')';
+	    var classes = lightestElements[i].className;
+	  	if(classes.indexOf("colorize-bg") >= 0) {
+	  		lightestElements[i].style.backgroundColor = 'rgb(' + colors[0].join(',') + ')';
+    	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		lightestElements[i].style.color = 'rgb(' + colors[0].join(',') + ')';
+    	}
+
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		lightestElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + colors[0].join(',') 
+	  													+ ', 0.7) 0%, rgba(' + colors[0].join(',') + ', 0.7) 100%), ' 
+	  													+ lightestElements[i].style.backgroundImage;
+	  	}
 	}
 
 	for(var i = 0; i < inverseLightestElements.length; i++) {
-	    inverseLightestElements[i].style.backgroundColor = 'rgb(' + inverseLightestColor.join(',') + ')';
+	    var classes = inverseLightestElements[i].className;
+	  	if(classes.indexOf("colorize-bg") >= 0) {
+	  		inverseLightestElements[i].style.backgroundColor = 'rgb(' + inverseLightestColor.join(',') + ')';
+    	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		inverseLightestElements[i].style.color = 'rgb(' + inverseLightestColor.join(',') + ')';
+    	}
+
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		inverseLightestElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + inverseLightestColor.join(',') 
+	  													+ ', 0.7) 0%, rgba(' + inverseLightestColor.join(',') + ', 0.7) 100%), ' 
+	  													+ inverseLightestElements[i].style.backgroundImage;
+	  	}
 	}
 
 	/*
@@ -80,11 +124,37 @@ $(window).load(function() {
 	}
 
 	for(var i = 0; i < darkestElements.length; i++) {
-	    darkestElements[i].style.backgroundColor = 'rgb(' + colors[colors.length - 1].join(',') + ')';
+	    var classes = darkestElements[i].className;
+	  	if(classes.indexOf("colorize-bg") >= 0) {
+	  		darkestElements[i].style.backgroundColor = 'rgb(' + colors[colors.length - 1].join(',') + ')';
+    	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		darkestElements[i].style.color = 'rgb(' + colors[colors.length - 1].join(',') + ')';
+    	}
+
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		darkestElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + colors[colors.length - 1].join(',') 
+	  													+ ', 0.7) 0%, rgba(' + colors[colors.length - 1].join(',') + ', 0.7) 100%), ' 
+	  													+ darkestElements[i].style.backgroundImage;
+	  	}
 	}
 
 	for(var i = 0; i < inverseDarkestElements.length; i++) {
-	    inverseDarkestElements[i].style.backgroundColor = 'rgb(' + inverseDarkestColor.join(',') + ')';
+	    var classes = inverseDarkestElements[i].className;
+	  	if(classes.indexOf("colorize-bg") >= 0) {
+	  		inverseDarkestElements[i].style.backgroundColor = 'rgb(' + inverseDarkestColor.join(',') + ')';
+    	}
+
+    	if(classes.indexOf("colorize-text") >= 0) {
+	  		inverseDarkestElements[i].style.color = 'rgb(' + inverseDarkestColor.join(',') + ')';
+    	}
+
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		inverseDarkestElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + inverseDarkestColor.join(',') 
+	  													+ ', 0.7) 0%, rgba(' + inverseDarkestColor.join(',') + ', 0.7) 100%), ' 
+	  													+ inverseDarkestElements[i].style.backgroundImage;
+	  	}
 	}
 
 	/* Print all colors with luminance values along with darkest and lightest colors
