@@ -24,7 +24,7 @@
 
 	</main>
 
-	<div class="music-bar colorize-dominant">
+	<div class="music-bar colorize-lightest">
 		<img class="album-art" src="res/img/album.png"/>
 		<div class="song-metadata">
 			<p class="song-title">Happy (From "Despicable Me 2")</p>
@@ -36,7 +36,7 @@
 		<span class="cd-nav-icon"></span>
 
 		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-			<circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+			<circle fill="transparent" stroke="#ffffff" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
 		</svg>
 	</a>
 	
