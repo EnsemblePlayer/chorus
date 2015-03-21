@@ -24,7 +24,7 @@
 
 	</main>
 
-	<div class="music-bar colorize-dominant">
+	<div class="music-bar colorize-dominant colorize-bg">
 		<img class="album-art" src="res/img/album.png"/>
 		<div class="song-metadata">
 			<p class="song-title">Happy (From "Despicable Me 2")</p>
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 
-	<a href="#cd-nav" class="cd-nav-trigger colorize-dominant">Menu 
+	<a href="#cd-nav" class="cd-nav-trigger colorize-dominant colorize-bg">Menu 
 		<span class="cd-nav-icon"></span>
 
 		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
@@ -40,7 +40,7 @@
 		</svg>
 	</a>
 	
-	<div id="cd-nav" class="cd-nav colorize-dominant">
+	<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url('res/img/bg.jpg'); background-size: cover;">
 		<div class="cd-navigation-wrapper">
 			<div class="cd-half-block">
 				<nav>

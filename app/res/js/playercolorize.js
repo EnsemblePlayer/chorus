@@ -25,7 +25,15 @@ $(window).load(function() {
  	 */
     dominantElements = document.getElementsByClassName("colorize-dominant");
     for(var i = 0; i < dominantElements.length; i++) {
-	  	dominantElements[i].style.backgroundColor = 'rgb(' + color.join(',') + ')';
+    	var classes = dominantElements[i].className;
+    	if(classes.indexOf("colorize-bg") >= 0) {
+	  		dominantElements[i].style.backgroundColor = 'rgb(' + color.join(',') + ')';
+    	}
+	  	if(classes.indexOf("colorize-img") >= 0) {
+	  		dominantElements[i].style.backgroundImage = 'linear-gradient(to bottom, rgba(' + color.join(',') 
+	  													+ ', 0.7) 0%, rgba(' + color.join(',') + ', 0.7) 100%), ' 
+	  													+ dominantElements[i].style.backgroundImage;
+	  	}
 	}
 
 	inverseDominantElements = document.getElementsByClassName("colorize-dominant-inverse");
@@ -79,7 +87,7 @@ $(window).load(function() {
 	    inverseDarkestElements[i].style.backgroundColor = 'rgb(' + inverseDarkestColor.join(',') + ')';
 	}
 
-	/* Print all colors with luminance values along with darkest and lightest colors */
+	/* Print all colors with luminance values along with darkest and lightest colors
 	console.log("----------")
 	for(var i = 0; i < colors.length; i++) {
 	    console.log(colors[i]);
@@ -88,4 +96,5 @@ $(window).load(function() {
 
 	console.log("darkest: " + colors[0]);
 	console.log("lightest: " + colors[colors.length - 1]);
+	*/
 });
