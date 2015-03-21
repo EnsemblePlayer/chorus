@@ -1,8 +1,6 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
+/*
+ * Primary Style
+ */
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -34,11 +32,9 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
+/*
+ * Menu Components 
+ */
 main {
   position: relative;
   z-index: 2;
@@ -406,6 +402,80 @@ main p {
   transform: translateX(0);
 }
 
+/*
+ * Ensemble CSS
+ */
+
+ .music-bar {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #3f3f3f;
+  color: #f2f2f2;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.7s;
+  -moz-transition: -moz-transform 0.7s;
+  transition: transform 0.7s;
+  -webkit-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+}
+.navigation-is-open .music-bar {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.album-art {
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+.song-metadata {
+  margin-top: 20px; 
+  margin-bottom: 10px;
+  margin-left: 90px;
+}
+.song-title {
+  font-size: 20px; 
+  font-weight: 300;
+  white-space: nowrap; 
+  overflow: hidden; 
+  width: auto;
+}
+.song-subtitle {
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: normal; 
+  white-space: nowrap; 
+  width: auto; 
+  display: inline;
+}
+.fullscreen {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-left: 75px;
+  padding-bottom: 25px;
+  font-size: 24px;
+  color: #f2f2f2;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+}
+.fullscreen:hover {
+  font-size: 28px;
+}
 .logo {
   position: absolute;
   right: 0;
