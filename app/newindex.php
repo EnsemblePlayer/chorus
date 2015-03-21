@@ -18,9 +18,6 @@
 <body>
 	<main>
 
-		<h1>Full-Screen Pushing Navigation</h1>
-
-		<p>A full page menu, that replaces the current content by pushing it off the screen.</p>
 
 	</main>
 
