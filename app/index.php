@@ -133,11 +133,11 @@
 									<td><?php echo $v['service']; ?></td>
 									<td><?php echo $v['user']; ?></td>
 									<td>
-										<a style="color:black;" href="/api/move.php?entryid=<?=$e?>&dir=0"><i class="fa fa-chevron-up fa-2x"></i></a> &nbsp;
-										<a style="color:black;" href="/api/move.php?entryid=<?=$e?>&dir=1"><i class="fa fa-chevron-down fa-2x"></i></a> &nbsp;
-										<a style="color:black;" href="/api/<?=(($id==1) ? 'pause.php"><i class="fa fa-pause' : 'skipto.php?entryid='.$e.'"><i class="fa fa-play')?> fa-2x"></i></a> &nbsp;
-										<a style="color:black;" href="/api/duplicate.php?entryid=<?=$e?>"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
-										<a style="color:black;" href="/api/delete.php?entryid=<?=$e?>"><i class="fa fa-trash fa-2x"></i></a>
+										<a style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=0"><i class="fa fa-chevron-up fa-2x"></i></a> &nbsp;
+										<a style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=1"><i class="fa fa-chevron-down fa-2x"></i></a> &nbsp;
+										<a style="color:black;" href="../api/<?=(($id==1) ? 'pause.php"><i class="fa fa-pause' : 'skipto.php?entryid='.$e.'"><i class="fa fa-play')?> fa-2x"></i></a> &nbsp;
+										<a style="color:black;" href="../api/duplicate.php?entryid=<?=$e?>"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
+										<a style="color:black;" href="../api/delete.php?entryid=<?=$e?>"><i class="fa fa-trash fa-2x"></i></a>
 									</td>
 								</tr>
 								<?php $id++;
