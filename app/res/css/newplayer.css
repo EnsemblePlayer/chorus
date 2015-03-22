@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,7 +15,6 @@ html * {
 body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
-  color: #3f3f3f;
   background-color: #ffffff;
 }
 
@@ -37,7 +33,7 @@ main {
   height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 200px 5%;
+  padding: 20px 5%;
   background-color: #F0F0F0;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
@@ -54,18 +50,13 @@ main {
   -moz-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
   transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
 }
-main h1, main p {
-  text-align: center;
-}
 main h1 {
   font-size: 2.6rem;
   margin-bottom: 1em;
 }
 main p {
   font-family: "Roboto", sans-serif;
-  color: #d6dfdb;
   max-width: 450px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 .navigation-is-open main {
@@ -77,13 +68,7 @@ main p {
 }
 @media only screen and (min-width: 768px) {
   main {
-    padding: 250px 10%;
-  }
-  main h1 {
-    font-size: 3.6rem;
-  }
-  main p {
-    font-size: 2rem;
+    padding: 20px 10%;
   }
 }
 
@@ -430,6 +415,9 @@ main p {
   -o-transform: translateX(100%);
   transform: translateX(100%);
 }
+.media-btn {
+  color: black;
+}
 .album-art {
   width: 75px;
   height: 75px;
@@ -441,14 +429,14 @@ main p {
   margin-left: 90px;
 }
 .song-title {
-  font-size: 20px; 
+  font-size: 2rem; 
   font-weight: 300;
   white-space: nowrap; 
   overflow: hidden; 
   width: auto;
 }
 .song-subtitle {
-  font-size: 14px;
+  font-size: 1.5rem;
   line-height: 1.75;
   font-weight: normal; 
   white-space: nowrap; 
@@ -461,7 +449,7 @@ main p {
   bottom: 0;
   padding-left: 75px;
   padding-bottom: 25px;
-  font-size: 24px;
+  font-size: 2.5rem;
   color: #f2f2f2;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -469,7 +457,7 @@ main p {
   -ms-transition: all 0.2s ease;
 }
 .fullscreen:hover {
-  font-size: 28px;
+  font-size: 2.75rem;
 }
 .logo {
   position: absolute;
@@ -478,6 +466,6 @@ main p {
   padding-right: 50px;
   padding-bottom: 25px;
   font-family: 'Lobster', cursive;
-  font-size: 32px;
+  font-size: 3.5rem;
   color: #f2f2f2;
 }

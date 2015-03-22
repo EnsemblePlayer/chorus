@@ -11,13 +11,41 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="res/css/newplayermodal.css">
+	<link rel="stylesheet" href="res/css/table.css">
 	<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
   	
 	<title>Ensemble</title>
 </head>
 <body>
 	<main>
-
+		<table class="table table-striped queue">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Artist</th>
+					<th>Service</th>
+					<th>User</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1</th>
+					<td>Happy (From "Despicable Me 2")</td>
+					<td>Pharrell Williams</td>
+					<td>Google Play Music</td>
+					<td>Thomas Gaubert</td>
+					<td>
+						<a class="media-btn colorize-darkest colorize-text"><i class="fa fa-chevron-up fa-2x"></i></a> &nbsp;
+						<a class="media-btn colorize-darkest colorize-text"><i class="fa fa-chevron-down fa-2x"></i></a> &nbsp;
+						<a class="media-btn colorize-darkest colorize-text"><i class="fa fa-pause fa-2x"></i></a> &nbsp;
+						<a class="media-btn colorize-darkest colorize-text"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
+						<a class="media-btn colorize-darkest colorize-text"><i class="fa fa-trash fa-2x"></i></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
 	</main>
 
