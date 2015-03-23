@@ -3,6 +3,8 @@ $(window).load(function() {
     //var result = $('body > .music-bar > .album-art').attr('src');
     //image.src = result;
     image.src = imageData;
+    image.width = 75;
+    image.height = 75;
     var colorThief = new ColorThief();
     var colors = colorThief.getPalette(image);
     var color = colorThief.getColor(image);
