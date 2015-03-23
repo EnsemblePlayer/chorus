@@ -1,19 +1,20 @@
 $(window).load(function() {
-	var img = new Image();
-	img.crossOrigin = 'Anonymous';
-	img.src = $('body > .music-bar > .album-art').attr('src');
-	var colorThief = new ColorThief();
-	var color = colorThief.getColor(img);
-	var colors = colorThief.getPalette(img);
 
-	/*
-    var image = new Image;
-    var result = $('body > .music-bar > .album-art').attr('src');
-    image.src = result;
+	var image = new Image;
+	$.getImageData({
+		url: $('body > .music-bar > .album-art').attr('src'),
+		success: function(img){
+			image.src = img.src; 
+		},
+		error: function(xhr, text_status){
+			// Handle your error here
+		}
+	});
+    //var result = $('body > .music-bar > .album-art').attr('src');
+    //image.src = result;
     var colorThief = new ColorThief();
     var colors = colorThief.getPalette(image);
     var color = colorThief.getColor(image);
-    */
 
     /*
      * Sort colors from lightest to darkest based on luminance
