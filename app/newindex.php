@@ -147,14 +147,13 @@
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script type="text/javascript">
-		    var imageData = <?php echo getImageData(); ?>
+		    var imageData = <?php echo getImageData($artist_art); ?>
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
 
 		<?php
-			function getImageData() {
-				$url = $artist_art;
+			function getImageData($url) {
 				$image = file_get_contents($url);
 				if ($image != false) {
 				    return 'data:image/jpg;base64,'.base64_encode($image);
