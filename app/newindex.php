@@ -68,6 +68,9 @@
 	?>
 	<body>
 		<main>
+			<?php if(count($array) == 0) { ?>
+				<h3 style="text-align: center;">Nothing is in the Queue</h3>
+			<?php } else { ?>
 			<table class="table table-striped queue">
 				<thead>
 					<tr>
@@ -96,13 +99,12 @@
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/duplicate.php?entryid=<?=$e?>"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/delete.php?entryid=<?=$e?>"><i class="fa fa-trash fa-2x"></i></a>
 						</td>
-					</tr>
-					<?php $id++;
-					}
-				} ?>
-				</tbody>
-			</table>
-
+						</tr>
+						<?php $id++;
+						} ?>
+					</tbody>
+				</table>
+			<?php } ?>
 		</main>
 
 		<div class="music-bar colorize-dominant colorize-bg">
