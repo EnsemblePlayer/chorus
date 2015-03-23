@@ -2,7 +2,7 @@ $(window).load(function() {
     var image = new Image;
     //var result = $('body > .music-bar > .album-art').attr('src');
     //image.src = result;
-    image.src = phpVars[0];
+    image.src = imageData;
     var colorThief = new ColorThief();
     var colors = colorThief.getPalette(image);
     var color = colorThief.getColor(image);
