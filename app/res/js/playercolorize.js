@@ -2,11 +2,9 @@ $(window).load(function() {
 	var img = new Image();
 	img.crossOrigin = 'Anonymous';
 	img.src = $('body > .music-bar > .album-art').attr('src');
-	img.onload = function () {
-		var colorThief = new ColorThief();
-		var color = colorThief.getColor(img);
-		var colors = colorThief.getPalette(img);
-	};
+	var colorThief = new ColorThief();
+	var color = colorThief.getColor(img);
+	var colors = colorThief.getPalette(img);
 
 	/*
     var image = new Image;
