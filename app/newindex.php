@@ -123,7 +123,7 @@
 			</svg>
 		</a>
 		
-		<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url('<?php echo "'" . $artist_art . "'";?>'); background-size: cover;">
+		<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
 			<div class="cd-navigation-wrapper">
 				<div class="cd-half-block">
 					<nav>
