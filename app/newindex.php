@@ -146,8 +146,23 @@
 		<script src="res/js/jquery-2.1.1.js"></script>
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
-		<script src="res/js/jquery.getimagedata.min.js"></script>
+		<script type="text/javascript">
+		    phpVars = new Array();
+		    <?php
+		        echo 'phpVars.push("' . getImageData(); . '");';
+		    ?>
+		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
+
+		<?php
+			function getImageData() {
+				$url = $artist_art;
+				$image = file_get_contents($url);
+				if ($image !== false){
+				    return 'data:image/jpg;base64,'.base64_encode($image);
+				}
+			}
+		?>
 	</body>
 </html>
