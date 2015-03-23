@@ -88,7 +88,7 @@
 						foreach ($array as $v) { $e = $v['id']; ?>
 					<tr>
 						<th><?php echo $id; ?></th>
-						<td><?php echo $v['title']; ?> <?php if($id == 1) { ?><span class="label label-default">Now Playing</span><?php } ?></td>
+						<td><?php echo $v['title']; ?></td>
 						<td><?php echo $v['artist']; ?></td>
 						<td><?php echo $v['service']; ?></td>
 						<td><?php echo $v['user']; ?></td>
@@ -147,6 +147,6 @@
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script src="res/js/color-thief.min.js"></script>
-		<!-- <script src="res/js/playercolorize.js"></script> -->
+		<script src="res/js/playercolorize.js"></script>
 	</body>
 </html>
