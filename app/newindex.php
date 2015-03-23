@@ -156,7 +156,7 @@
 			function getImageData() {
 				$url = $artist_art;
 				$image = file_get_contents($url);
-				if ($image !== false){
+				if ($image != false) {
 				    return 'data:image/jpg;base64,'.base64_encode($image);
 				}
 			}
