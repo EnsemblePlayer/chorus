@@ -146,7 +146,7 @@
 		<script src="res/js/jquery-2.1.1.js"></script>
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
-		<script src="js/jquery.getimagedata.min.js"></script>
+		<script src="res/js/jquery.getimagedata.min.js"></script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
 	</body>
