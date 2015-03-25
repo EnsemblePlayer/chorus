@@ -99,10 +99,11 @@
 									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png" width="20px" height="20px"/>
 								</button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Up</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Down</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pause / Play</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=0">Move Up</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=1">Move Down</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/<?=(($id==1) ? 'pause.php">Pause' : 'skipto.php?entryid='.$e.'">Play')?>"</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/duplicate.php?entryid=<?=$e?>">Duplicate</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/delete.php?entryid=<?=$e?>">Delete</a></li>
 								</ul>
 							</div>
 							<!--
