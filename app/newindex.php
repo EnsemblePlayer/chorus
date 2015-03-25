@@ -96,23 +96,20 @@
 						<td>
 							<div class="dropdown" style="margin-top: 2px;">
 								<button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png" width="20px" height="20px"/>
+									<img src="res/img/overflow.png" width="20px" height="20px"/>
 								</button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=0">Move Up</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=1">Move Down</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/<?=(($id==1) ? 'pause.php">Pause' : 'skipto.php?entryid='.$e.'">Play')?>"</a></li>
+								<?php if($id == 1) { ?>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/pause.php">Pause</a></li>
+								<?php } else { ?>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/play.php">Play</a></li>
+								<?php } ?>
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/duplicate.php?entryid=<?=$e?>">Duplicate</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/delete.php?entryid=<?=$e?>">Delete</a></li>
 								</ul>
 							</div>
-							<!--
-							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=0"><i class="fa fa-chevron-up fa-2x"></i></a> &nbsp;
-							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=1"><i class="fa fa-chevron-down fa-2x"></i></a> &nbsp;
-							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/<?=(($id==1) ? 'pause.php"><i class="fa fa-pause' : 'skipto.php?entryid='.$e.'"><i class="fa fa-play')?> fa-2x"></i></a> &nbsp;
-							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/duplicate.php?entryid=<?=$e?>"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
-							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/delete.php?entryid=<?=$e?>"><i class="fa fa-trash fa-2x"></i></a>
-							-->
 						</td>
 						</tr>
 						<?php $id++;
