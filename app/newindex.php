@@ -95,8 +95,8 @@
 						<td><?php echo $v['user']; ?></td>
 						<td>
 							<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png"/>
+								<button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png" width="50" height="50"/>
 								</button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Up</a></li>
