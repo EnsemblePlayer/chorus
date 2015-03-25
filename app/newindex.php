@@ -19,6 +19,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
@@ -147,10 +148,13 @@
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script type="text/javascript">
-		    var imageData = "<?php echo getImageData($album_art); ?>";
+			$(window).load(function() {
+		    	var imageData = "<?php echo getImageData($album_art); ?>";
+		    });
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 		<?php
 			function getImageData($url) {
