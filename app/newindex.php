@@ -94,11 +94,24 @@
 						<td><?php echo $v['service']; ?></td>
 						<td><?php echo $v['user']; ?></td>
 						<td>
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png"/>
+								</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Up</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Down</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pause / Play</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+								</ul>
+							</div>
+							<!--
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=0"><i class="fa fa-chevron-up fa-2x"></i></a> &nbsp;
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/move.php?entryid=<?=$e?>&dir=1"><i class="fa fa-chevron-down fa-2x"></i></a> &nbsp;
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/<?=(($id==1) ? 'pause.php"><i class="fa fa-pause' : 'skipto.php?entryid='.$e.'"><i class="fa fa-play')?> fa-2x"></i></a> &nbsp;
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/duplicate.php?entryid=<?=$e?>"><i class="fa fa-repeat fa-2x"></i></a> &nbsp;
 							<a class="colorize-darkest colorize-text" style="color:black;" href="../api/delete.php?entryid=<?=$e?>"><i class="fa fa-trash fa-2x"></i></a>
+							-->
 						</td>
 						</tr>
 						<?php $id++;
