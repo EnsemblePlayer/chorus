@@ -148,9 +148,7 @@
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script type="text/javascript">
-			$(window).load(function() {
-		    	var imageData = "<?php echo getImageData($album_art); ?>";
-		    });
+		    var imageData = "<?php echo getImageData($album_art); ?>";
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
