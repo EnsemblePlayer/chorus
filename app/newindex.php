@@ -94,9 +94,9 @@
 						<td><?php echo $v['service']; ?></td>
 						<td><?php echo $v['user']; ?></td>
 						<td>
-							<div class="dropdown">
+							<div class="dropdown" style="margin-top: 2px;">
 								<button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png" width="25px" height="25px"/>
+									<!-- Dropdown <span class="caret"></span> --> <img src="res/img/overflow.png" width="20px" height="20px"/>
 								</button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Up</a></li>
