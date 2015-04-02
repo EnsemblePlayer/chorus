@@ -144,7 +144,7 @@
 							<li><a href="#0" class="selected">Home</a></li>
 							<li><a href="#0">Music</a></li>
 							<li><a href="#0">Settings</a></li>
-							<li><a href="#0">Logout</a></li>
+							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</nav>
 
