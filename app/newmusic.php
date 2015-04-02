@@ -23,8 +23,6 @@
 		<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
-		<link rel="stylesheet" href="res/css/newplayermodal.css">
-		<link rel="stylesheet" href="res/css/table.css">
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
 	  	
 		<title>Ensemble</title>
@@ -69,57 +67,11 @@
 	?>
 	<body>
 		<main>
-			<?php if(count($array) == 0) { ?>
-				<h3 style="text-align: center;">Nothing is in the Queue</h3>
-			<?php } else { ?>
-			<table class="table table-striped queue">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Name</th>
-						<th>Artist</th>
-						<th>Service</th>
-						<th>User</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						$id = 1;
-						foreach ($array as $v) { $e = $v['id']; ?>
-					<tr>
-						<th><?php echo $id; ?></th>
-						<td><?php echo $v['title']; ?></td>
-						<td><?php echo $v['artist']; ?></td>
-						<td><?php echo $v['service']; ?></td>
-						<td><?php echo $v['user']; ?></td>
-						<td>
-							<div class="dropdown" style="margin-top: 2px;">
-								<button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									<img src="res/img/overflow.png" width="20px" height="20px"/>
-								</button>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=0">Move Up</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/move.php?entryid=<?=$e?>&dir=1">Move Down</a></li>
-								<?php if($id == 1) { ?>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/pause.php">Pause</a></li>
-								<?php } else { ?>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/play.php">Play</a></li>
-								<?php } ?>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/duplicate.php?entryid=<?=$e?>">Duplicate</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="../api/delete.php?entryid=<?=$e?>">Delete</a></li>
-								</ul>
-							</div>
-						</td>
-						</tr>
-						<?php $id++;
-						} ?>
-					</tbody>
-				</table>
-			<?php } ?>
+			<h1>TODO: Implement Music tab</h1>
 		</main>
 
 		<div class="music-bar colorize-dominant colorize-bg">
+			<?php include "../api/includes/dev.php" ?>
 			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
 			<div class="song-metadata">
 				<p class="song-title"><?php echo $title; ?></p>
@@ -140,8 +92,8 @@
 				<div class="cd-half-block">
 					<nav>
 						<ul class="cd-primary-nav">
-							<li><a href="#0" class="selected">Home</a></li>
-							<li><a href="#0">Music</a></li>
+							<li><a href="#0">Home</a></li>
+							<li><a href="#0" class="selected">Music</a></li>
 							<li><a href="#0">Settings</a></li>
 							<li><a href="#0">Logout</a></li>
 						</ul>
