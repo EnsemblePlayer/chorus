@@ -120,7 +120,6 @@
 		</main>
 
 		<div class="music-bar colorize-dominant colorize-bg">
-			<?php include "../api/includes/dev.php" ?>
 			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
 			<div class="song-metadata">
 				<p class="song-title"><?php echo $title; ?></p>
