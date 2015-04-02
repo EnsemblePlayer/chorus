@@ -459,6 +459,7 @@ main p {
 }
 .fullscreen:hover {
   font-size: 2.75rem;
+  color: #f2f2f2;
 }
 .logo {
   position: absolute;
