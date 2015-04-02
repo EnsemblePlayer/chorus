@@ -299,6 +299,7 @@ main p {
   font-size: 2.4rem;
   color: rgba(255, 255, 255, 0.3);
   display: inline-block;
+  text-decoration: none;
 }
 .cd-nav .cd-primary-nav a.selected {
   color: #ffffff;
