@@ -1,0 +1,47 @@
+.music-services {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.music-service {
+  background-size: cover;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.music-service-gpm {
+  background-color: #FB8521;
+  color: white;
+}
+
+.music-service-gpm > h1 > small {
+  color: white;
+}
+
+.music-service-spotify {
+  background-color: #84BD00;
+  color: white;
+}
+
+.music-service-spotify > h1 > small {
+  color: white;
+}
+
+.music-service-yt {
+  background-color: #CD201F;
+  color: white;
+}
+
+.music-service-yt > h1 > small {
+  color: white;
+}
+
+main {
+  padding-top: 0px;
+  width: 100%;
+  margin: 0;
+}

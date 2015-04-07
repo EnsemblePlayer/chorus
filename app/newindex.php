@@ -141,8 +141,8 @@
 				<div class="cd-half-block">
 					<nav>
 						<ul class="cd-primary-nav">
-							<li><a href="#0" class="selected">Home</a></li>
-							<li><a href="#0">Music</a></li>
+							<li><a href="#" class="selected">Home</a></li>
+							<li><a href="newmusic.php">Music</a></li>
 							<li><a href="#0">Settings</a></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
