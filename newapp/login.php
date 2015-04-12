@@ -6,11 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Ensemble - Login</title>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/login.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+		<script src="res/js/jquery-2.1.1.js"></script>
+		<script src="res/js/login.js"></script>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,47 +23,53 @@
 	</head>
 	<?php include "../api/includes/dev.php" ?>
 	<body>
-		<div style="width: 100%; height: 100%;">
-			<div class="album-banner">
-				<h1 class="title" href="music.html">Login</h1>
+    	<hgroup>
+			<h1>Login</h1>
+		</hgroup>
+		<?php if(isset($_GET['error']) && $_GET['error'] == "1") { ?>
+			<div class="alert alert-error">
+				<i class="fa fa-exclamation-triangle"></i> Invalid credentials
 			</div>
-		</div>
-
+		<?php } ?>
+		<?php if(isset($_GET['error']) && $_GET['error'] == "2") { ?>
+			<div class="alert alert-error">
+				<i class="fa fa-exclamation-triangle"></i> No POSTed input
+			</div>
+		<?php } ?>
+		<?php if(isset($_GET['success']) && $_GET['success'] == "1") { ?>
+			<div class="alert alert-success">
+				<i class="fa fa-info"></i> Account created
+			</div>
+		<?php } ?>
+		<?php if(isset($_GET['success']) && $_GET['success'] == "2") { ?>
+			<div class="alert alert-warning">
+				<i class="fa fa-exclamation-triangle"></i> Unable to acquire GPM device ID
+			</div>
+		<?php } ?>
 		<form class="form-signin" role="form" id="form" method="POST" action="../api/login.php">
-			<?php if(isset($_GET['error']) && $_GET['error'] == "1") { ?>
-				<div class="alert alert-danger">
-					<b>Login failed:</b> Invalid credentials
-				</div>
-			<?php } ?>
-			<?php if(isset($_GET['error']) && $_GET['error'] == "2") { ?>
-				<div class="alert alert-danger">
-					<b>Login failed:</b> No POSTed input
-				</div>
-			<?php } ?>
-			<?php if(isset($_GET['success']) && $_GET['success'] == "1") { ?>
-				<div class="alert alert-success">
-					<b>Account created:</b> You may now login
-				</div>
-			<?php } ?>
-			<?php if(isset($_GET['success']) && $_GET['success'] == "2") { ?>
-				<div class="alert alert-danger">
-					<b>Account created:</b> Unable to acquire GPM device ID
-				</div>
-			<?php } ?>
-			<input id="top" type="text" class="form-control" name="username" placeholder="Username" maxlength="30" required autofocus>
-			<input id="bottom" type="password" class="form-control" name="password" placeholder="Password" maxlength="30" required>
-			<div class="buttons pull-right">
-				<a class="button secondary" href="register.php">Register</a>
-				<a id="submit" class="button primary" href="javascript:submitForm()">Login</a>
-				<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
+			<div class="group">
+				<input type="email"><span class="highlight"></span><span class="bar"></span>
+				<label>Username</label>
 			</div>
+			<div class="group">
+				<input type="password"><span class="highlight"></span><span class="bar"></span>
+				<label>Password</label>
+			</div>
+			<button type="button" class="button buttonBlue" onclick="submitForm()">Login
+				<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+			</button>
+			<button type="button" class="button buttonRed" onclick="toRegister()">Register
+				<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+			</button>
 		</form>
-
-		<p class="footer">&copy; 2015 Ensemble</p>
+		<footer>&copy; 2015 Ensemble</footer>
 		<script>
 			function submitForm() {
 				document.getElementById("form").submit();
 			}
+
+			function toRegister() {
+				window.location.href = "register.php";
+			}
     	</script>
-	</body>
 </html>
