@@ -7,10 +7,12 @@
 
 .music-service {
   background-size: cover;
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 5%;
+}
+@media only screen and (min-width: 768px) {
+  .music-service {
+    padding: 20px 10%;
+  }
 }
 
 .music-service-gpm {

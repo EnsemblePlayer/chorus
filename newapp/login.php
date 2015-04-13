@@ -61,6 +61,7 @@
 			<button type="button" class="button buttonRed" onclick="toRegister()">Register
 				<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 			</button>
+			<input type="submit" style="display:none;">
 		</form>
 		<footer>&copy; 2015 Ensemble</footer>
 		<script>

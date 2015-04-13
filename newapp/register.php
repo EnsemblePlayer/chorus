@@ -61,6 +61,7 @@
 			<button type="button" class="button buttonRed" onclick="toLogin()">Login
 				<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 			</button>
+			<input type="submit" style="display:none;">
 		</form>
 		<div class="info-box">
 			Ensemble is a free and easy way to enjoy music with friends.

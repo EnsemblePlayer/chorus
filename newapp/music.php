@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
 		<link rel="stylesheet" href="res/css/newplayermodal.css">
 		<link rel="stylesheet" href="res/css/newmusic.css">
+		<link rel="stylesheet" href="res/css/cards.css">
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
 	  	
 		<title>Ensemble</title>
@@ -25,25 +26,64 @@
 					<form class="form" id="gpform" method="POST" action="../api/addsong.php">
 						<div class="form-group">
 							<input type="hidden" class="form-control" name="service" value="1" required>
-							<input type="text" class="form-control" name="song" placeholder="Search Query" required>
+							<div class="input-group">
+								<input type="text" class="form-control" name="song" placeholder="Search Query" required>
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button" href="javascript:submitGPM()">Search</button>
+								</span>
+							</div>
 						</div>
-						<a id="submit" class="button primary" href="javascript:submitGPM()">Submit</a>
-						<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
+						<input type="submit" style="display:none;">
 					</form>
-				</div>
-				<div class="music-service music-service-spotify">
-					<h1>Spotify <small>Coming soon!</small></h1>
+					<a href="">
+						<div card>
+							<div class="image">
+								<img src="res/img/card1.jpg">
+							</div>
+							<div class="content">
+								Playlists
+							</div>
+						</div>
+					</a>
+					<a href="">
+						<div card>
+							<div class="image">
+								<img src="res/img/card2.jpg">
+							</div>
+							<div class="content">
+								Radio Stations
+							</div>
+						</div>
+					</a>
+					<a href="">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-bg.jpg">
+							</div>
+							<div class="content">
+								Open Google Play Music
+							</div>
+						</div>
+					</a>
 				</div>
 				<div class="music-service music-service-yt">
 					<h1>YouTube</h1>
 					<form class="form" id="ytform" method="POST" action="../api/addsong.php">
 						<div class="form-group">
 							<input type="hidden" class="form-control" name="service" value="0" required>
-							<input type="text" class="form-control" name="song" placeholder="YouTube URL or Video ID" required>
+							<div class="input-group">
+								<input type="text" class="form-control" name="song" placeholder="YouTube URL or Video ID" required>
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button" href="javascript:submitYouTube()">Search</button>
+								</span>
+							</div>
 						</div>
-						<a id="submit" class="button primary" href="javascript:submitYouTube()">Submit</a>
-						<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
+						<input type="submit" style="display:none;">
 					</form>
+				</div>
+				<div class="music-service music-service-spotify" style="text-align: center;">
+					<img src="res/img/spotify.png" style="padding-bottom: 20px;">
+					<h3>Coming Soon</h3>
 				</div>
 			</div>
 		</main>
