@@ -1,5 +1,17 @@
 <!doctype html>
 <html lang="en" class="no-js">
+	<?php
+		require '../api/includes/logged.php';
+		$ignoress = true;
+		require '../api/includes/connect.php';
+
+		//TOFIX: player association
+		$player = 1;
+		$s = $m->query("SELECT * FROM `players` WHERE `playerId`='$player'") or die($m->error);
+		$f = $s->fetch_array(MYSQLI_ASSOC);
+		$startpause = ($f['Status'] == 1) ? "pause" : "";
+		$m->close();
+	?>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +30,44 @@
 	  	
 		<title>Ensemble</title>
 	</head>
+	<?php 
+		$data = file_get_contents("http://ensembleplayer.me/api/queue.php");
+		$array = json_decode($data, true);
+
+		if(count($array) == 0) {
+			$title = "Nothing is in the Queue";
+			$subtitle = "Use Music tab to play a song.";
+			$album_art = "res/img/icon.png";
+			$artist_art = "res/img/albums.jpg";
+		} else {
+			$title = $array[0]['title'];
+			$artist = $array[0]['artist'];
+			$album = $array[0]['album'];
+			$service = $array[0]['service'];
+			$user = $array[0]['user'];
+			$album_art = $array[0]['album_art'];
+			$artist_art = $array[0]['artist_art'];
+			if ($service == "Google Play" && $artist_art != "") {
+				$artist_art .= "=w1920-c-h1080-e100";
+			}
+
+			if($album_art == "") {
+				$album_art = "res/img/icon.png";
+			}
+
+			if($artist_art == "") {
+				$artist_art = "res/img/albums.jpg";
+			}
+
+			if($service == "YouTube" || $artist == "") {
+				$subtitle = $artist . " - " . $user . " - " . $service;
+				if($service == "YouTube")
+					$album = "res/img/youtube.png";
+			} else {
+				$subtitle = $artist . " - " . $album . " - " . $user . " - " . $service;
+			}
+		}
+	?>
 	<body>
 		<main>
 			<div class="music-services">
@@ -101,10 +151,11 @@
 		</main>
 
 		<div class="music-bar colorize-dominant colorize-bg">
-			<img class="album-art" src="res/img/album.png"/>
+			<?php include "../api/includes/dev.php" ?>
+			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
 			<div class="song-metadata">
-				<p class="song-title">Happy (From "Despicable Me 2")</p>
-				<p class="song-subtitle">Pharrell Williams - G I R L - tgaubert - Google Play Music</p>
+				<p class="song-title"><?php echo $title; ?></p>
+				<p class="song-subtitle"><?php echo $subtitle; ?></p>
 			</div>
 		</div>
 
@@ -140,7 +191,7 @@
 		<script src="res/js/velocity.min.js"></script>
 		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script type="text/javascript">
-		    //var imageData = "<?php echo getImageData($album_art); ?>";
+		    var imageData = "<?php echo getImageData($album_art); ?>";
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
