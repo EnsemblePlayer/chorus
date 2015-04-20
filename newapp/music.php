@@ -38,7 +38,7 @@
 					<a href="">
 						<div card>
 							<div class="image">
-								<img src="res/img/card1.jpg">
+								<img src="res/img/google-play-card-playlists.jpg">
 							</div>
 							<div class="content">
 								Playlists
@@ -48,20 +48,30 @@
 					<a href="">
 						<div card>
 							<div class="image">
-								<img src="res/img/card2.jpg">
+								<img src="res/img/google-play-card-radio.jpg">
 							</div>
 							<div class="content">
 								Radio Stations
 							</div>
 						</div>
 					</a>
-					<a href="">
+					<a href="settings.php">
 						<div card>
 							<div class="image">
-								<img src="res/img/google-play-bg.jpg">
+								<img src="res/img/google-play-card-settings.jpg">
 							</div>
 							<div class="content">
-								Open Google Play Music
+								Settings
+							</div>
+						</div>
+					</a>
+					<a href="http://music.google.com">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-card-bg.jpg">
+							</div>
+							<div class="content">
+								Open GPM
 							</div>
 						</div>
 					</a>
@@ -81,8 +91,8 @@
 						<input type="submit" style="display:none;">
 					</form>
 				</div>
-				<div class="music-service music-service-spotify" style="text-align: center;">
-					<img src="res/img/spotify.png" style="padding-bottom: 20px;">
+				<div class="music-service music-service-spotify" style="text-align: center; padding-bottom: 100px;">
+					<img src="res/img/spotify.png" width="10%" height="10%" style="padding-bottom: 20px;">
 					<h3>Coming Soon</h3>
 				</div>
 			</div>

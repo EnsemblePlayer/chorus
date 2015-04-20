@@ -1,8 +1,8 @@
 [card] {
     display: inline-block;
     vertical-align: top;
-    width: 250px;
-    height: 300px;
+    width: 150px;
+    height: 200px;
     position: relative;
     overflow: hidden;
     margin: 8px 0 16px 0;
@@ -60,4 +60,8 @@
     left: 0;
     padding: 20px;
     color: #FFF;
+}
+.card-disabled {
+    pointer-events: none;
+    cursor: default;
 }
