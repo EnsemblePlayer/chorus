@@ -24,7 +24,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
 		<link rel="stylesheet" href="res/css/newplayermodal.css">
-		<link rel="stylesheet" href="res/css/newmusic.css">
+		<link rel="stylesheet" href="res/css/music.css">
 		<link rel="stylesheet" href="res/css/cards.css">
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
 	  	
