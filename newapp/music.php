@@ -172,7 +172,7 @@
 				<div class="cd-half-block">
 					<nav>
 						<ul class="cd-primary-nav">
-							<li><a href="newindex.php">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="#" class="selected">Music</a></li>
 							<li><a href="#0">Settings</a></li>
 							<li><a href="logout.php">Logout</a></li>
