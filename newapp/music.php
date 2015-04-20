@@ -35,6 +35,7 @@
 						</div>
 						<input type="submit" style="display:none;">
 					</form>
+					<!-- TODO: Implement
 					<a href="">
 						<div card>
 							<div class="image">
@@ -55,6 +56,7 @@
 							</div>
 						</div>
 					</a>
+					-->
 					<a href="settings.php">
 						<div card>
 							<div class="image">
