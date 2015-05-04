@@ -143,7 +143,7 @@
 						<ul class="cd-primary-nav">
 							<li><a href="#" class="selected">Home</a></li>
 							<li><a href="music.php">Music</a></li>
-							<li><a href="#0">Settings</a></li>
+							<li><a href="settings.php">Settings</a></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</nav>
