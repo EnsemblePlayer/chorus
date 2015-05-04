@@ -85,14 +85,16 @@
 					<b>Error:</b> Unable to get GPM device ID
 				</div>
 			<?php } ?>
-			<form class="form-signin" role="form" id="form" method="POST" action="../api/settings.php">
-				<h2 class="form-signin-heading">Music Accounts</h2>
-				<input id="top" type="email" class="form-control" name="gpusername" placeholder="Google Play Music Email" value="<?=$_SESSION['googleplay']?>">
-				<input id="bottom" type="password" class="form-control" name="gppassword" placeholder="Google Play Music Password">
-				<input id="top" type="email" class="form-control" name="susername" placeholder="Spotify Email" value="<?=$_SESSION['spotify']?>">
-				<input id="bottom" type="password" class="form-control" name="spassword" placeholder="Spotify Password">
+			<form role="form" id="form" method="POST" action="../api/settings.php">
+				<h1>Music Accounts</h1>
+				<h3>Google Play Music</h3>
+				<input type="email" class="form-control" name="gpusername" placeholder="Google Play Music Email" value="<?=$_SESSION['googleplay']?>">
+				<input type="password" class="form-control" name="gppassword" placeholder="Google Play Music Password">
+				<h3>Spotify</h3>
+				<input type="email" class="form-control" name="susername" placeholder="Spotify Email" value="<?=$_SESSION['spotify']?>">
+				<input type="password" class="form-control" name="spassword" placeholder="Spotify Password">
 				<div class="buttons pull-right">
-					<a id="submit" class="button primary" href="javascript:submitForm()">Save</a>
+					<a id="submit" class="btn btn-primary" href="javascript:submitForm()">Save</a>
 					<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
 				</div>
 			</form>
@@ -120,9 +122,9 @@
 				<div class="cd-half-block">
 					<nav>
 						<ul class="cd-primary-nav">
-							<li><a href="index.php" class="selected">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="music.php">Music</a></li>
-							<li><a href="#">Settings</a></li>
+							<li><a href="#" class="selected">Settings</a></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</nav>
