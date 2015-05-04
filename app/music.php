@@ -1,50 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 	<?php
-	require '../api/includes/logged.php';
-	$ignoress = true;
-	require '../api/includes/connect.php';
+		require '../api/includes/logged.php';
+		$ignoress = true;
+		require '../api/includes/connect.php';
 
-	//TOFIX: player association
-	$player = 1;
-	$s = $m->query("SELECT * FROM `players` WHERE `playerId`='$player'") or die($m->error);
-	$f = $s->fetch_array(MYSQLI_ASSOC);
-	$startpause = ($f['Status'] == 1) ? "pause" : "";
-	$m->close();
+		//TOFIX: player association
+		$player = 1;
+		$s = $m->query("SELECT * FROM `players` WHERE `playerId`='$player'") or die($m->error);
+		$f = $s->fetch_array(MYSQLI_ASSOC);
+		$startpause = ($f['Status'] == 1) ? "pause" : "";
+		$m->close();
 	?>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ensemble</title>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="res/css/material.css">
-		<link rel="stylesheet" href="res/css/player.css">
-		<link rel="stylesheet" href="res/css/jquery.fullPage.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<style>
-			/* Fixed footer.
-			* --------------------------------------- */
-			#footer {
-				position:fixed;
-				display:block;
-				width: 100%;
-				background: #333;
-				z-index:9;
-				color: #f2f2f2;
-				margin: 0px auto;
-				bottom:0px;
-			}
-		</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
+		<link rel="stylesheet" href="res/css/newplayermodal.css">
+		<link rel="stylesheet" href="res/css/music.css">
+		<link rel="stylesheet" href="res/css/cards.css">
+		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
+	  	
+		<title>Ensemble</title>
 	</head>
 	<?php 
 		$data = file_get_contents("http://ensembleplayer.me/api/queue.php");
@@ -84,77 +68,134 @@
 			}
 		}
 	?>
-	<body style="font-family: 'Roboto', sans-serif; margin-top:-20px;">
-		<div id="footer">
-			<?php include "../api/includes/dev.php" ?>
-			<img src=<?php echo '"' . $album_art . '"'; ?> width="100" height="100" style="float:left;"/>
-			<a href="" class="play-btn <?=$startpause?> pull-right"></a> 
-			<div style="margin-top: 20px; margin-left: 120px;">
-				<p><span style="font-size: 20px; font-weight: 300; white-space: nowrap; overflow: hidden; width: auto;"><?php echo $title; ?></span></p>
-				<p><span style="font-size: 14px; font-weight: normal; white-space: nowrap; width: auto; display: inline;"><?php echo $subtitle; ?></span></p>
-			</div>
-		</div>
-
-		<div id="fullpage">
-			<div class="section">
-				<div style="position: fixed; top: 0; width: 100%;">
-					<div style="background: #333; height: 115px; padding: 25px;">
-						<div style="padding-left: 60px; padding-top: 15px;">
-							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 300; padding-left: 10px; padding-right: 10px;" href="index.php">Home</a>
-							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 400; padding-left: 10px; padding-right: 10px; border-bottom-style: solid; border-bottom-color: #e91e63;" href="music.php">Music</a>
-							<a style="text-decoration: none; color: #f2f2f2; font-size: 32px; font-weight: 300; padding-left: 10px; padding-right: 10px;" href="settings.php">Settings</a>
-							<a href="logout.php"><i class="sign-out fa fa-sign-out fa-3x pull-right"></i></a>
-						</div>
-					</div>
-					
-					<div style="margin: 10px;">
-						<h3>Google Play Music</h3>
-						<form class="form" id="gpform" method="POST" action="../api/addsong.php">
-							<div class="form-group">
-								<input type="hidden" class="form-control" name="service" value="1" required>
+	<body>
+		<main>
+			<div class="music-services">
+				<div class="music-service music-service-gpm">
+					<h1>Google Play Music <small>tpgaubert@gmail.com</small></h1>
+					<form class="form" id="gpform" method="POST" action="../api/addsong.php">
+						<div class="form-group">
+							<input type="hidden" class="form-control" name="service" value="1" required>
+							<div class="input-group">
 								<input type="text" class="form-control" name="song" placeholder="Search Query" required>
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button" href="javascript:submitGPM()">Search</button>
+								</span>
 							</div>
-							<a id="submit" class="button primary" href="javascript:submitGPM()">Submit</a>
-							<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
-						</form>
-						<h3>Spotify</h3>
-						Coming soon!
-						<h3>YouTube</h3>
-						<form class="form" id="ytform" method="POST" action="../api/addsong.php">
-							<div class="form-group">
-								<input type="hidden" class="form-control" name="service" value="0" required>
+						</div>
+						<input type="submit" style="display:none;">
+					</form>
+					<!-- TODO: Implement
+					<a href="">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-card-playlists.jpg">
+							</div>
+							<div class="content">
+								Playlists
+							</div>
+						</div>
+					</a>
+					<a href="">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-card-radio.jpg">
+							</div>
+							<div class="content">
+								Radio Stations
+							</div>
+						</div>
+					</a>
+					-->
+					<a href="settings.php">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-card-settings.jpg">
+							</div>
+							<div class="content">
+								Settings
+							</div>
+						</div>
+					</a>
+					<a href="http://music.google.com">
+						<div card>
+							<div class="image">
+								<img src="res/img/google-play-card-bg.jpg">
+							</div>
+							<div class="content">
+								Open GPM
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="music-service music-service-yt">
+					<h1>YouTube</h1>
+					<form class="form" id="ytform" method="POST" action="../api/addsong.php">
+						<div class="form-group">
+							<input type="hidden" class="form-control" name="service" value="0" required>
+							<div class="input-group">
 								<input type="text" class="form-control" name="song" placeholder="YouTube URL or Video ID" required>
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button" href="javascript:submitYouTube()">Search</button>
+								</span>
 							</div>
-							<a id="submit" class="button primary" href="javascript:submitYouTube()">Submit</a>
-							<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
-						</form>
-					</div>
-					
+						</div>
+						<input type="submit" style="display:none;">
+					</form>
+				</div>
+				<div class="music-service music-service-spotify" style="text-align: center; padding-bottom: 100px;">
+					<img src="res/img/spotify.png" width="10%" height="10%" style="padding-bottom: 20px;">
+					<h3>Coming Soon</h3>
 				</div>
 			</div>
-			<div class="section" style="background-size: cover; background-image: url(<?php echo "'" . $artist_art . "'";?>);">
-				
+		</main>
+
+		<div class="music-bar colorize-dominant colorize-bg">
+			<?php include "../api/includes/dev.php" ?>
+			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
+			<div class="song-metadata">
+				<p class="song-title"><?php echo $title; ?></p>
+				<p class="song-subtitle"><?php echo $subtitle; ?></p>
 			</div>
 		</div>
-		
-		<a href="#"><i class="arrow-btn fa fa-arrow-down fa-3x" style="position: fixed; top: 24px; left: 24px; z-index: 999;"></i></a>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="res/js/jquery.slimscroll.min.js"></script>
-		<script type="text/javascript" src="res/js/jquery.fullPage.js"></script>
+		<a href="#cd-nav" class="cd-nav-trigger colorize-dominant colorize-bg">Menu 
+			<span class="cd-nav-icon"></span>
+
+			<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+				<circle fill="transparent" stroke="#ffffff" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+			</svg>
+		</a>
+		
+		<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
+			<div class="cd-navigation-wrapper">
+				<div class="cd-half-block">
+					<nav>
+						<ul class="cd-primary-nav">
+							<li><a href="index.php">Home</a></li>
+							<li><a href="#" class="selected">Music</a></li>
+							<li><a href="settings.php">Settings</a></li>
+							<li><a href="logout.php">Logout</a></li>
+						</ul>
+					</nav>
+
+					<a href="#fullscreen" class="fullscreen"><i class="fa fa-expand"></i></a>
+				</div><!-- .cd-half-block -->
+				
+				<div class="cd-half-block">
+					<span class="logo">Ensemble</span>
+				</div> <!-- .cd-half-block -->
+			</div> <!-- .cd-navigation-wrapper -->
+		</div> <!-- .cd-nav -->
+		<script src="res/js/jquery-2.1.1.js"></script>
+		<script src="res/js/velocity.min.js"></script>
+		<script src="res/js/player.js"></script> <!-- Resource jQuery -->
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#fullpage').fullpage({
-					css3: true,
-					verticalCentered: false,
-					scrollOverflow: true,
-					autoScrolling: false
-				});
-			});
+		    var imageData = "<?php echo getImageData($album_art); ?>";
 		</script>
-		<script src="res/js/material.js"></script>
+		<script src="res/js/color-thief.min.js"></script>
+		<script src="res/js/playercolorize.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 			function submitYouTube() {
 				document.getElementById("ytform").submit();
@@ -164,5 +205,14 @@
 				document.getElementById("gpform").submit();
 			}
     	</script>
+
+		<?php
+			function getImageData($url) {
+				$image = file_get_contents($url);
+				if ($image != false) {
+				    return 'data:image/jpg;base64,'.base64_encode($image);
+				}
+			}
+		?>
 	</body>
 </html>
