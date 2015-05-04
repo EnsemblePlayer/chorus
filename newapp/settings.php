@@ -90,10 +90,12 @@
 				<h3>Google Play Music</h3>
 				<input type="email" class="form-control" name="gpusername" placeholder="Google Play Music Email" value="<?=$_SESSION['googleplay']?>">
 				<input type="password" class="form-control" name="gppassword" placeholder="Google Play Music Password">
+				<br>
 				<h3>Spotify</h3>
 				<input type="email" class="form-control" name="susername" placeholder="Spotify Email" value="<?=$_SESSION['spotify']?>">
 				<input type="password" class="form-control" name="spassword" placeholder="Spotify Password">
-				<div class="buttons pull-right">
+				<br>
+				<div class="buttons">
 					<a id="submit" class="btn btn-primary" href="javascript:submitForm()">Save</a>
 					<input type="submit" style="display:none;"> <!--EDIT THIS LATER-->
 				</div>
