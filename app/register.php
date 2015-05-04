@@ -48,11 +48,11 @@
 		<?php } ?>
 		<form role="form" id="form" method="POST" action="../api/register.php">
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span>
+				<input type="email" name="username"><span class="highlight"></span><span class="bar"></span>
 				<label>Username</label>
 			</div>
 			<div class="group">
-				<input type="password"><span class="highlight"></span><span class="bar"></span>
+				<input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
 				<label>Password</label>
 			</div>
 			<button type="button" class="button buttonBlue" onclick="submitForm()">Register
