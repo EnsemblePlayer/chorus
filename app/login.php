@@ -43,6 +43,11 @@
 					<b>Account created:</b> You may now login
 				</div>
 			<?php } ?>
+			<?php if(isset($_GET['success']) && $_GET['success'] == "2") { ?>
+				<div class="alert alert-danger">
+					<b>Account created:</b> Unable to acquire GPM device ID
+				</div>
+			<?php } ?>
 			<input id="top" type="text" class="form-control" name="username" placeholder="Username" maxlength="30" required autofocus>
 			<input id="bottom" type="password" class="form-control" name="password" placeholder="Password" maxlength="30" required>
 			<div class="buttons pull-right">

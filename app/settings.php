@@ -104,6 +104,26 @@
 					</div>
 					
 					<div style="padding: 20px;">
+						<?php if(isset($_GET['success']) && $_GET['success'] == "1") { ?>
+							<div class="alert alert-success">
+								<b>Changes saved</b>
+							</div>
+						<?php } ?>
+						<?php if(isset($_GET['error']) && $_GET['error'] == "1") { ?>
+							<div class="alert alert-danger">
+								<b>Error:</b> No input
+							</div>
+						<?php } ?>
+						<?php if(isset($_GET['error']) && $_GET['error'] == "2") { ?>
+							<div class="alert alert-danger">
+								<b>Error:</b> Invalid ID
+							</div>
+						<?php } ?>
+						<?php if(isset($_GET['error']) && $_GET['error'] == "3") { ?>
+							<div class="alert alert-danger">
+								<b>Error:</b> Unable to get GPM device ID
+							</div>
+						<?php } ?>
 						<form class="form-signin" role="form" id="form" method="POST" action="../api/settings.php">
 							<h2 class="form-signin-heading">Music Accounts</h2>
 							<input id="top" type="email" class="form-control" name="gpusername" placeholder="Google Play Music Email" value="<?=$_SESSION['googleplay']?>">
