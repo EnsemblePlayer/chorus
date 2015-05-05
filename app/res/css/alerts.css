@@ -7,6 +7,10 @@
 	font-size: 1.25em;
 }
 
+.alert > i {
+	padding-right: 10px;
+}
+
 .alert-error {
 	color: #ffffff;
   	background-color: #F44336;
