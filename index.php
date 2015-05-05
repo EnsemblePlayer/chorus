@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -27,7 +28,7 @@
 				<div style="width: 100%; height: 100%;">
 					<div style="background-size: cover; background-image: url('res/img/albums.jpg'); height: 400px; padding: 25px; box-shadow: 0px 400px rgba(73, 73, 73, 0.6) inset;">
 						<div style="padding-top: 15px; text-align: center;">
-							<p><span style="font-family: 'Lobster', cursive; color: #f2f2f2; font-size: 128px;" href="music.html">Ensemble</span></p>
+							<p><span style="font-family: 'Lobster', cursive; color: #f2f2f2; font-size: 128px;">Ensemble</span></p>
 							<p><span style="color: #f2f2f2; font-size: 28px; font-weight: 300;">unified streaming music</span></p>
 							<div class="buttons">
 								<a href="app/register.php" class="button download">Register</a>

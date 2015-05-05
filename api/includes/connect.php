@@ -6,7 +6,7 @@ if (!isset($ignoress)) {
 $m = new mysqli("localhost", "root", "root", "ensemble");
 
 if ($m->connect_errno) {
-	echo "Database connection failed: " . $m->connect_error . "<br>Blame the administrator of this website, Thomas Gaubert.";
+	header('Location: ../../error.php?error=1');
 }
 
 //CONSTANTS
