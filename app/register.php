@@ -50,7 +50,7 @@
 		<?php } ?>
 		<form role="form" id="form" method="POST" action="../api/register.php">
 			<div class="group">
-				<input type="email" name="username"><span class="highlight"></span><span class="bar"></span>
+				<input type="text" name="username"><span class="highlight"></span><span class="bar"></span>
 				<label>Username</label>
 			</div>
 			<div class="group">
