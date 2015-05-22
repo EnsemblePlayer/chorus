@@ -9,6 +9,5 @@
     }
   ],
   "start_url": "index.php",
-  "display": "standalone",
-  "orientation": "portrait"
+  "display": "standalone"
 }
