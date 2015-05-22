@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333">
+
 		<title>Ensemble - Register</title>
 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -12,6 +14,7 @@
 		<link rel="stylesheet" href="res/css/alerts.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link rel="icon" sizes="500x500" href="res/img/icon.png">
 
 		<script src="res/js/jquery-2.1.1.js"></script>
 		<script src="res/js/login.js"></script>

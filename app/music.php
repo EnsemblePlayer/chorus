@@ -15,6 +15,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333">
+
+		<title>Ensemble</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -26,9 +29,9 @@
 		<link rel="stylesheet" href="res/css/newplayermodal.css">
 		<link rel="stylesheet" href="res/css/music.css">
 		<link rel="stylesheet" href="res/css/cards.css">
+		<link rel="icon" sizes="500x500" href="res/img/icon.png">
+
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
-	  	
-		<title>Ensemble</title>
 	</head>
 	<?php 
 		$data = file_get_contents("http://ensembleplayer.me/api/queue.php");
