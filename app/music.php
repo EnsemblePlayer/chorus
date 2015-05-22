@@ -79,7 +79,7 @@
 							<div class="input-group">
 								<input type="text" class="form-control" name="song" placeholder="Search Query" required>
 								<span class="input-group-btn">
-									<button class="btn btn-primary" type="button" href="javascript:submitGPM()">Search</button>
+									<button class="btn btn-primary" type="submit" href="javascript:submitGPM()">Search</button>
 								</span>
 							</div>
 						</div>
@@ -136,7 +136,7 @@
 							<div class="input-group">
 								<input type="text" class="form-control" name="song" placeholder="YouTube URL or Video ID" required>
 								<span class="input-group-btn">
-									<button class="btn btn-primary" type="button" href="javascript:submitYouTube()">Search</button>
+									<button class="btn btn-primary" type="submit" href="javascript:submitYouTube()">Search</button>
 								</span>
 							</div>
 						</div>
