@@ -250,6 +250,6 @@ footer img:focus , footer a:focus { outline: none; }
 
 @media (max-width: 480px) {
 	form {
-		width: 350px;
+		width: 300px;
 	}
 }

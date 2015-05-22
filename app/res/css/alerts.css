@@ -43,12 +43,12 @@
 
 @media (max-width: 480px) {
 	.alert {
-		width: 350px;
+		width: 300px;
 		font-size: 1em;
 	}
 
 	.info-box {
-		width: 350px;
+		width: 300px;
 		font-size: 0.7em;
 	}
 }
