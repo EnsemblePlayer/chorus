@@ -471,3 +471,14 @@ main p {
   font-size: 3.5rem;
   color: #f2f2f2;
 }
+@media (max-width: 1170px) {
+  main {
+    padding-top: 82px;
+  }
+  .music-services {
+    background-color: #FB8521;
+  }
+  .music-service-gpm {
+    margin-top: 72px;
+  }
+}
