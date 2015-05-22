@@ -69,7 +69,7 @@ label {
 
 input:focus ~ label, input.used ~ label {
 	top: -20px;
-  	transform: scale(.75); left: -6px;
+  	transform: scale(.75); left: 1px;
 	/* font-size: 14px; */
 	color: #4a89dc;
 }
