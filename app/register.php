@@ -8,6 +8,8 @@
 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/login.css">
+		<link rel="stylesheet" href="res/css/register.css">
+		<link rel="stylesheet" href="res/css/alerts.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
@@ -21,7 +23,8 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<?php include "../api/includes/dev.php" ?>
+	<?php include "../api/includes/dev.php"; ?>
+	<?php require "../api/includes/notlogged.php"; ?>
 	<body>
     	<hgroup>
 			<h1>Register</h1>
@@ -48,7 +51,7 @@
 		<?php } ?>
 		<form role="form" id="form" method="POST" action="../api/register.php">
 			<div class="group">
-				<input type="email" name="username"><span class="highlight"></span><span class="bar"></span>
+				<input type="text" name="username"><span class="highlight"></span><span class="bar"></span>
 				<label>Username</label>
 			</div>
 			<div class="group">

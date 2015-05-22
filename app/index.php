@@ -78,7 +78,7 @@
 						<th>#</th>
 						<th>Name</th>
 						<th>Artist</th>
-						<th>Service</th>
+						<th class="hide-mobile">Service</th>
 						<th>User</th>
 						<th>Actions</th>
 					</tr>
@@ -91,7 +91,7 @@
 						<th><?php echo $id; ?></th>
 						<td><?php echo $v['title']; ?></td>
 						<td><?php echo $v['artist']; ?></td>
-						<td><?php echo $v['service']; ?></td>
+						<td class="hide-mobile"><?php echo $v['service']; ?></td>
 						<td><?php echo $v['user']; ?></td>
 						<td>
 							<div class="dropdown" style="margin-top: 2px;">

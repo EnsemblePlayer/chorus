@@ -3,10 +3,10 @@ if (!isset($ignoress)) {
 	session_start();
 }
 
-$m = new mysqli("localhost", "DB_USER", "DB_PASSWORD", "DB_NAME");
+$m = new mysqli("localhost", "root", "root", "ensemble");
 
 if ($m->connect_errno) {
-	echo "Database connection failed: " . $m->connect_error . "<br>Blame the administrator of this website, Thomas Gaubert.";
+	header('Location: ../../error.php?error=1');
 }
 
 //CONSTANTS
