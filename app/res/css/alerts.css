@@ -40,3 +40,15 @@
 	font-size: 0.8em;
 	text-align: center;
 }
+
+@media (max-width: 480px) {
+	.alert {
+		width: 350px;
+		font-size: 1em;
+	}
+
+	.info-box {
+		width: 350px;
+		font-size: 0.7em;
+	}
+}

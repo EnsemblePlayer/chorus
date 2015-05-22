@@ -247,3 +247,9 @@ footer img {
 footer img:hover { opacity: .83; }
 
 footer img:focus , footer a:focus { outline: none; }
+
+@media (max-width: 480px) {
+	form {
+		width: 350px;
+	}
+}
