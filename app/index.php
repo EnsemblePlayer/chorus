@@ -78,8 +78,8 @@
 						<th>#</th>
 						<th>Name</th>
 						<th>Artist</th>
-						<th>Service</th>
-						<th class="hide-mobile">User</th>
+						<th class="hide-mobile">Service</th>
+						<th>User</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
