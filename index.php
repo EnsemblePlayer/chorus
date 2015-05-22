@@ -39,26 +39,26 @@
 			<h1>Your Music</h1>
 			<p>Login to your music streaming services of choice and listen away.<p>
 			
-			<img src="res/img/playmusic.png" width="150" height="150" style="margin-right: 12px;"/> <i class="fa fa-plus fa-2x"></i>
-			<img src="res/img/youtube.png" width="150" height="106" style="margin-left: 12px; margin-right: 12px;"/> <i class="fa fa-plus fa-2x"></i>
-			<img src="res/img/spotify.png" width="150" height="150" style="margin-left: 12px;"/>
+			<img src="res/img/playmusic.png" class="music-left"/> <i class="fa fa-plus fa-2x"></i>
+			<img src="res/img/youtube.png" class="music-mid"/> <i class="fa fa-plus fa-2x"></i>
+			<img src="res/img/spotify.png" class="music-right"/>
 			
 			<h1>Your Friends</h1>
 			<p>Create and manage a queue made up of songs from different people and services.</p>
-			<img src="res/img/list.png" width="150" height="150"/>
+			<img src="res/img/list.png" class="friends"/>
 			
 			<h1>Your Device</h1>
 			<p>
 				Designed with cross platform compatibility and performance in mind,<br>instantly create a music streamer wherever you are.
 			</p>
-			<img src="res/img/osx.png" width="100" height="100"/>
-			<img src="res/img/pi.png" width="150" height="150"/>
-			<img src="res/img/win.png" width="100" height="100"/>
+			<img src="res/img/osx.png" class="osx"/>
+			<img src="res/img/pi.png" class="pi"/>
+			<img src="res/img/win.png" class="win"/>
 		</div>
 		
 		<!-- FOOTER -->
-		<div style="bottom: 0; width: 100%; text-align: center; margin-top: 100px;">
-			<span>
+		<div class="footer">
+			<span class="footer-text">
 				<i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by Anthony Bauer and Thomas Gaubert and Grant Uy<br>
 				HackDFW 2015 - The University of Texas at Austin</p>
 			</span>
@@ -68,10 +68,5 @@
 			</a>
 			<img src="res/img/buildings.png" width="100%"/>
 		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<script src="res/js/material.js"></script>
 	</body>
 </html>
