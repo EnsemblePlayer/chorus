@@ -482,3 +482,9 @@ main p {
     margin-top: 72px;
   }
 }
+
+@media (max-width: 600px) {
+  .hide-mobile {
+    display: none;
+  }
+}
