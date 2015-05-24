@@ -12,8 +12,8 @@
 		<link rel="stylesheet" href="res/css/login.css">
 		<link rel="stylesheet" href="res/css/register.css">
 		<link rel="stylesheet" href="res/css/alerts.css">
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link rel="icon" sizes="500x500" href="res/img/icon.png">
 
 		<script src="res/js/jquery-2.1.1.js"></script>

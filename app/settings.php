@@ -16,8 +16,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#333">
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
@@ -32,7 +32,7 @@
 		<title>Ensemble</title>
 	</head>
 	<?php 
-		$data = file_get_contents("http://ensembleplayer.me/api/queue.php");
+		$data = file_get_contents("https://ensembleplayer.me/api/queue.php");
 		$array = json_decode($data, true);
 
 		if(count($array) == 0) {
