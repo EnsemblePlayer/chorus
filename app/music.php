@@ -15,23 +15,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333">
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<title>Ensemble</title>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="res/css/reset.css"> <!-- CSS reset -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="res/css/newplayer.css"> <!-- Resource style -->
 		<link rel="stylesheet" href="res/css/newplayermodal.css">
 		<link rel="stylesheet" href="res/css/music.css">
 		<link rel="stylesheet" href="res/css/cards.css">
+		<link rel="icon" sizes="500x500" href="res/img/icon.png">
+
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
-	  	
-		<title>Ensemble</title>
 	</head>
 	<?php 
-		$data = file_get_contents("http://ensembleplayer.me/api/queue.php");
+		$data = file_get_contents("https://ensembleplayer.me/api/queue.php");
 		$array = json_decode($data, true);
 
 		if(count($array) == 0) {
@@ -195,7 +198,7 @@
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 			function submitYouTube() {
 				document.getElementById("ytform").submit();
