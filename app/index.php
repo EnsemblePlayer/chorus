@@ -122,7 +122,7 @@
 			<?php } ?>
 		</main>
 
-		<div class="music-bar colorize-dominant colorize-bg">
+		<div class="music-bar colorize-darkest colorize-bg">
 			<?php include "../api/includes/dev.php" ?>
 			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
 			<div class="song-metadata">
@@ -131,7 +131,7 @@
 			</div>
 		</div>
 
-		<a href="#cd-nav" class="cd-nav-trigger colorize-dominant colorize-bg">Menu 
+		<a href="#cd-nav" class="cd-nav-trigger colorize-darkest colorize-bg">Menu 
 			<span class="cd-nav-icon"></span>
 
 			<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
@@ -139,7 +139,7 @@
 			</svg>
 		</a>
 		
-		<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
+		<div id="cd-nav" class="cd-nav colorize-darkest colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
 			<div class="cd-navigation-wrapper">
 				<div class="cd-half-block">
 					<nav>
