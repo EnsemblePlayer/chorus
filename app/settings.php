@@ -39,7 +39,7 @@
 			$title = "Nothing is in the Queue";
 			$subtitle = "Use Music tab to play a song.";
 			$album_art = "res/img/icon.png";
-			$artist_art = "res/img/albums.jpg";
+			$artist_art = "";
 		} else {
 			$title = $array[0]['title'];
 			$artist = $array[0]['artist'];
