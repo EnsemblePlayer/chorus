@@ -151,7 +151,7 @@
 						</ul>
 					</nav>
 
-					<a href="#fullscreen" class="fullscreen"><i class="fa fa-expand"></i></a>
+					<a id="fullscreen" class="fullscreen"><i class="fa fa-expand"></i></a>
 				</div><!-- .cd-half-block -->
 				
 				<div class="cd-half-block">
@@ -167,6 +167,7 @@
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
+		<script src"res/js/fullscreen.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 		<?php
