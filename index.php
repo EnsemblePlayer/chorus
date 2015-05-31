@@ -16,6 +16,12 @@
 		<link rel="icon" sizes="500x500" href="res/img/icon.png">
 		<link rel="manifest" href="manifest.json">
 
+		<script>
+			if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+				location.protocol = 'https:';
+			}
+    	</script>
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -72,5 +78,10 @@
 			</a>
 			<img src="res/img/buildings.png" width="100%"/>
 		</div>
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('service-worker.js', {scope: './'});
+			}
+	    </script>
 	</body>
 </html>

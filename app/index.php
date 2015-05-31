@@ -29,11 +29,6 @@
 		<link rel="icon" sizes="500x500" href="res/img/icon.png">
 
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
-		<script>
-			if ((!location.port || location.port == "80") && location.protocol != 'https:') {
-				location.protocol = 'https:';
-			}
-    	</script>
 	  	
 		<title>Ensemble</title>
 	</head>
@@ -174,11 +169,6 @@
 		<script src="res/js/playercolorize.js"></script>
 		<script src="res/js/fullscreen.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('service-worker.js', {scope: './'});
-			}
-	    </script>
 
 		<?php
 			function getImageData($url) {
