@@ -39,7 +39,7 @@
 			$title = "Nothing is in the Queue";
 			$subtitle = "Use Music tab to play a song.";
 			$album_art = "res/img/icon.png";
-			$artist_art = "res/img/albums.jpg";
+			$artist_art = "darkest";
 		} else {
 			$title = $array[0]['title'];
 			$artist = $array[0]['artist'];
@@ -105,7 +105,7 @@
 			</form>
 		</main>
 
-		<div class="music-bar colorize-dominant colorize-bg">
+		<div class="music-bar colorize-darkest colorize-bg">
 			<?php include "../api/includes/dev.php" ?>
 			<img class="album-art" src=<?php echo '"' . $album_art . '"'; ?>/>
 			<div class="song-metadata">
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 
-		<a href="#cd-nav" class="cd-nav-trigger colorize-dominant colorize-bg">Menu 
+		<a href="#cd-nav" class="cd-nav-trigger colorize-darkest colorize-bg">Menu 
 			<span class="cd-nav-icon"></span>
 
 			<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
@@ -122,7 +122,7 @@
 			</svg>
 		</a>
 		
-		<div id="cd-nav" class="cd-nav colorize-dominant colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
+		<div id="cd-nav" class="cd-nav colorize-darkest colorize-img" style="background-image: url(<?php echo "'" . $artist_art . "'";?>); background-size: cover;">
 			<div class="cd-navigation-wrapper">
 				<div class="cd-half-block">
 					<nav>
@@ -134,7 +134,7 @@
 						</ul>
 					</nav>
 
-					<a href="#fullscreen" class="fullscreen"><i class="fa fa-expand"></i></a>
+					<a href="#" onclick="toggleFullScreen()" class="fullscreen"><i class="fa fa-expand"></i></a>
 				</div><!-- .cd-half-block -->
 				
 				<div class="cd-half-block">
@@ -150,7 +150,7 @@
 		</script>
 		<script src="res/js/color-thief.min.js"></script>
 		<script src="res/js/playercolorize.js"></script>
-
+		<script src="res/js/fullscreen.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 			function submitForm() {

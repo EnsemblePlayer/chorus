@@ -452,6 +452,7 @@ main p {
   padding-bottom: 25px;
   font-size: 2.5rem;
   color: #f2f2f2;
+  text-decoration: none;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
