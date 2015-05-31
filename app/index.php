@@ -29,6 +29,11 @@
 		<link rel="icon" sizes="500x500" href="res/img/icon.png">
 
 		<script src="res/js/modernizr.js"></script> <!-- Modernizr -->
+		<script>
+			if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+				location.protocol = 'https:';
+			}
+    	</script>
 	  	
 		<title>Ensemble</title>
 	</head>
