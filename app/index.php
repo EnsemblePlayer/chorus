@@ -169,6 +169,11 @@
 		<script src="res/js/playercolorize.js"></script>
 		<script src="res/js/fullscreen.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('service-worker.js', {scope: './'});
+			}
+	    </script>
 
 		<?php
 			function getImageData($url) {
