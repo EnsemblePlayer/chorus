@@ -7,7 +7,7 @@ $entryid = (isset($_GET['entryid'])) ? intval($_GET['entryid']) : 0;
 $player = 1;
 if ($player > 0) {
 	$where = ($entryid > 0) ? "AND `entryId`='$entryid'" : "";
-	$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 $where ORDER BY `Position` ASC LIMIT 1") or die($m->error);
+	$qs = $m->query("SELECT * FROM `queueData` WHERE `PlayerId`='$player' AND `Position`>0 $where ORDER BY `Position` ASC LIMIT 1") or die($m->error);
 	if ($qs->num_rows == 1) {
 		$qf = $qs->fetch_array(MYSQLI_ASSOC);
 		$entry = $qf['entryId'];
@@ -30,10 +30,10 @@ if ($player > 0) {
 		//TOFIX: CHECK WHICH PLAYER IS ASSOCIATED
 		$p = 1;
 		//add to queue
-		$smax = $m->query("SELECT MAX(`Position`) AS `MaxPosition` FROM `queues` WHERE `PlayerId`='$p'") or die($m->error);
+		$smax = $m->query("SELECT MAX(`Position`) AS `MaxPosition` FROM `queueData` WHERE `PlayerId`='$p'") or die($m->error);
 		$fmax = $smax->fetch_array(MYSQLI_ASSOC);
 		$pos = $fmax['MaxPosition']+1000;
-		$m->query("INSERT INTO `queues` (`PlayerId`,`SongId`,`UserId`,`Position`) VALUES ('$p','$i','$u', '$pos')") or die($m->error);
+		$m->query("INSERT INTO `queueData` (`PlayerId`,`SongId`,`UserId`,`Position`) VALUES ('$p','$i','$u', '$pos')") or die($m->error);
 	}
 	if (isset($_SERVER['HTTP_REFERER'])) {
 		header("Location: ".$_SERVER['HTTP_REFERER']);

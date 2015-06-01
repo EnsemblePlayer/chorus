@@ -6,7 +6,7 @@ $direction = (isset($_GET['dir'])) ? intval($_GET['dir']) : 0;
 //TOFIX: change to currently selected player $_SESSION['player']
 $player = 1;
 if ($player > 0) {
-	$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player'") or die($m->error);
+	$qs = $m->query("SELECT * FROM `queueData` WHERE `PlayerId`='$player'") or die($m->error);
 	if ($qs->num_rows > 0) {
 		while ($qf = $qs->fetch_array(MYSQLI_ASSOC)) {
 			$cur[$qf['entryId']] = $qf['Position'];
@@ -35,7 +35,7 @@ if ($player > 0) {
 				}
 				$ct++;
 			}
-			$m->query("UPDATE `queues` SET `Position`='$pos' WHERE `entryId`='$entryid'") or die($m->error);
+			$m->query("UPDATE `queueData` SET `Position`='$pos' WHERE `entryId`='$entryid'") or die($m->error);
 
 			if (isset($_SERVER['HTTP_REFERER'])) {
 				header("Location: ".$_SERVER['HTTP_REFERER']);

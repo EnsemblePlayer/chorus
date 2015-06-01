@@ -6,7 +6,7 @@ $entryid = (isset($_GET['entryid'])) ? intval($_GET['entryid']) : 0;
 $player = 1;
 if ($player > 0) {
 	if ($entryid > 0) {
-		$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC") or die($m->error);
+		$qs = $m->query("SELECT * FROM `queueData` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC") or die($m->error);
 		if ($qs->num_rows > 0) {
 			while ($qf = $qs->fetch_array(MYSQLI_ASSOC)) {
 				$entry = $qf['entryId'];
@@ -15,7 +15,7 @@ if ($player > 0) {
 					break;
 				}
 				$m->query("DELETE FROM `songs` WHERE `songId`='$song'");
-				$m->query("DELETE FROM `queues` WHERE `entryId`='$entry'");
+				$m->query("DELETE FROM `queueData` WHERE `entryId`='$entry'");
 			}
 		}
 	}

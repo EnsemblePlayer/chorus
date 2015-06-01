@@ -64,7 +64,7 @@ if (isset($_POST['service']) && isset($_POST['song'])) {
 		$smax = $m->query("SELECT MAX(`Position`) AS `MaxPosition` FROM `queues` WHERE `PlayerId`='$p'") or die($m->error);
 		$fmax = $smax->fetch_array(MYSQLI_ASSOC);
 		$pos = $fmax['MaxPosition']+1000;
-		$m->query("INSERT INTO `queues` (`PlayerId`,`SongId`,`UserId`,`Position`) VALUES ('$p','$i','$u', '$pos')") or die($m->error);
+		$m->query("INSERT INTO `queueData` (`PlayerId`,`SongId`,`UserId`,`Position`) VALUES ('$p','$i','$u', '$pos')") or die($m->error);
 		header("Location: ../app/index.php");
 	}
 } else {

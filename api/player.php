@@ -21,7 +21,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 	$s = $m->query("SELECT * FROM `players` WHERE `playerID`='$player'") or die($m->error);
 	if ($s->num_rows == 1) {
 		if ($next == 1) {
-			$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC") or die($m->error);
+			$qs = $m->query("SELECT * FROM `queueData` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC") or die($m->error);
 			if ($qs->num_rows == 0) {
 				exitNull();
 			} else {
@@ -29,7 +29,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 				$qf = $qs->fetch_array(MYSQLI_ASSOC);
 				$lsid = $qf['SongId']; //last song id
 				$m->query("DELETE FROM `songs` WHERE `songId`='$lsid'") or die($m->error);
-				$m->query("DELETE FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
+				$m->query("DELETE FROM `queueData` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
 				//only was 1 left!
 				if ($qs->num_rows == 1) {
 					exitNull();
@@ -37,7 +37,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 			}
 		}
 		//get current status/song
-		$qs = $m->query("SELECT * FROM `queues` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
+		$qs = $m->query("SELECT * FROM `queueData` WHERE `PlayerId`='$player' AND `Position`>0 ORDER BY `Position` ASC LIMIT 1") or die($m->error);
 		if ($qs->num_rows == 0) {
 			exitNull();
 		}
