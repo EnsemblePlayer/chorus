@@ -21,8 +21,9 @@ if ($player > 0) {
 		$sartistart = addslashes($fs['ArtistArt']);
 		$surl = addslashes($fs['Url']);
 		$sapiid = addslashes($fs['ApiSongId']);
+		$ssvc = addslashes($fs['Service']);
 		//TOFIX: save the ID since it'll cache
-		$m->query("INSERT INTO `songs` (`Url`,`ApiSongId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$surl','$sapiid','$sname','$sartist','$salbum','$salbumart','$sartistart',1)") or die($m->error);
+		$m->query("INSERT INTO `songs` (`Url`,`ApiSongId`,`Title`,`Artist`,`Album`,`AlbumArt`,`ArtistArt`,`Service`) VALUES ('$surl','$sapiid','$sname','$sartist','$salbum','$salbumart','$sartistart','$ssvc')") or die($m->error);
 		//get id of song just inserted
 		$s = $m->query("SELECT * FROM `songs` WHERE `ApiSongId`='$sapiid' AND `Url`='$surl' ORDER BY `songId` DESC LIMIT 1") or die($m->error); 
 		$f = $s->fetch_array(MYSQLI_ASSOC);
